@@ -148,10 +148,25 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                  | CRUD    | Response                     | Notes                              |
+|----------------------|--------------------------------|---------|------------------------------|------------------------------------|
+| GET                  | /members                       | Read    | List of all members          |                                    |
+| GET                  | /members/:id                   | Read    | Member info                  |                                    |
+| GET                  | /members/:id/books             | Read    | List of books                | Books checked out by member        |
+| POST                 | /members                       | Create  | Link to member profile       | Create new member                  |
+| PUT                  | /members/:id                   | Update  | No content                   | Update member details              |
+| DELETE               | /members/:id                   | Destroy | No content                   | Remove member                      |
+| POST                 | /members/:id/books/:bookId     | Create  | No content                   | Checkout book                      |
+| DELETE               | /members/:id/books/:bookId     | Destroy | No content                   | Return book                        |
+| POST                 | /books                         | Create  | Link to book                 | Add book to library                |
+| GET                  | /books                         | Read    | List of all books in library |                                    |
+| GET                  | /books/:id                     | Read    | Info about one book          |                                    |
+| PUT                  | /books/:id                     | Update  | No content                   | Update book details                |
+| DELETE               | /books/:id                     | Destroy | No content                   | Remove book from library           |
+| POST                 | /genres                        | Create  | Link to genre                | Add new genre                      |
+| GET                  | /genres/:id/books              | Read    | List of books                | Books with this genre              |
+| POST                 | /genres/:genreId/books/:bookId | Create  | No content                   | Link book and genre                |
+| DELETE               | /genres/:genreId/books/:bookId | Destroy | No content                   | Remove link between genre and book |
 
 #### Things to keep in mind
 
