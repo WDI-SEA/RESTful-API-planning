@@ -147,12 +147,22 @@ Now it is time for you to plan a `RESTful API` of your own. Take a look at this 
 Your Task is to write a `RESTful` routing chart for the library system's API. Your API will need to serve full CRUD on `members`, `books`, and `genres`. Do not worry about authentication, another team is handling that. 
 
 You can use this markdown chart:
-
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
-
+  
+| VERB | URL pattern | Action \(CRUD\) | Response |Note |
+| :--- | :--- | :--- | :--- |:--- |
+| GET | /members | Index \(Read\) | List of all members | Lists all members |
+| GET | /members/:id | Index \(Read\) | Member info | Lists member info |
+| GET | /members/:id/books | Index \(Read\) | Array of books| List of books checked out |
+| POST | /members | Create \(Create\) | Link to member profile  | Creates a member with the POST payload\(form\) data |
+| GET | /members/edit/:id | Edit \(Read\) | No Data | Shows a form for editting a specific members \(i.e. /members/edit/1\) |
+| PUT | /members/:id | Update \(Update\) | No Data | Updates the data for a specific member \(i.e. /members/1\) |
+| DELETE | /members/:id | Destroy \(Delete\) |  No Data | Deletes the member with the specified id \(i.e. /members/1\) |
+| GET | /books | Index \(Read\) | List of all books | Lists all books |
+| GET | /books/:id | Index \(Read\) | A book info | Lists a specific book info |
+| POST | /books | Create \(Create\) | Link to the book  | Creates a book with the POST payload\(form\) data |
+| DELETE | /books/:id | Destroy \(Delete\) |  No Data | Deletes the book with the specified id \(i.e. /members/1\) |
+| POST | /genres | Create \(Create\) | Link to genre  | Creates a  new genre-book with the POST payload\(form\) data |
+| GET | /genres/:id/books | Index \(Read\) | A book info | Lists a specific genre book info |
 #### Things to keep in mind
 
 * A `book` can exit in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
