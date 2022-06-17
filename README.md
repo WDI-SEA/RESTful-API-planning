@@ -10,7 +10,7 @@
 
 ## What is REST?
 
-`REST` is an acronym for *_representational state transfer_*, and it describes a software architecture pattern that was created to solve software engineering issues presented by the world wide web. `REST` describes how an API should behave in order to maintain scalability, uniformity and backwards compatibility. Essentially, `REST` is a set of rules that if you follow, your web application's backed will be free of extremely complex and otherwise difficult to avoid bugs! You just need to learn the rules of a `RESTful API`, and how to apply them.
+`REST` is an acronym for *_representational state transfer_*, and it describes a software architecture pattern that was created to solve software engineering issues presented by the world wide web. `REST` describes how an API should behave in order to maintain scalability, uniformity and backwards compatibility. Essentially, `REST` is a set of rules that if you follow, your web application's backend will be free of extremely complex and otherwise difficult to avoid bugs! You just need to learn the rules of a `RESTful API`, and how to apply them.
 
 ## Reading Preparation
 
@@ -150,8 +150,19 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+|POST|/members|CREATE|No data or new member {member}|a redirect to {/members/:member_id} or just shows the new user data|
+|GET|/members/:member_id|READ|Single member {member}|details view of a single member (/members/1234) aka 'member profile'|
+|PUT|/members/:member_id|UPDATE|updated member {member}|updated member info|
+|DELETE|/members/:member_id|DESTROY|no data|deletes member|
+|GET|/members/:member_id/books|READ|an array of books [{book}, {book}]|list of all books checked out by member|
+|PUT|/members/:member_id/books|UPDATE|an array of books [{book}, {book}]|allow member to return a book they have checked out|
+|GET|/books|READ|an array of books [{book}, {book}]|list of all books and can sort by genre|
+|GET|/books/:book_id|READ|Single book {book}|Lists detailed in on a single book including its related genres|
+|PUT|/books/:book_id|UPDATE|updated book {book}|sends back updated book info with id of member who checked out|
+|GET|/genres|READ|array of genres[{genre}, {genre}]|lists all genres|
+|GET|/genres/:genre_id/books|READ|array of books[{book}, {book}]|lists all books of specific genre|
+|POST|/genres/:genre_id/books/:book_id|CREATE|no data|creates relationship between a book and a genre|
+|DELETE|/genres/:genre_id/books/:book_id|DESTROY|no data|removes relationship between a book and a genre|
 
 #### Things to keep in mind
 
