@@ -150,8 +150,14 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+|  GET  | /members/profile | READ | Single member {member} | Show's logged in member profile page |
+| GET | /books | READ  | Array of Books, Genres [{Books}, {Genres}] | Shows the member all books/genres with a toggle and filter by book/genre      |
+|  GET | /books/:id |READ|Single book {book}|Shows details of book id|
+|PUT |/books/:id|UPDATE|Single book {book}|Check Out: Add member id to Book "members" field|
+|DELETE|/books/:id |DESTROY|Single book {book}|Return: Remove member id from Book "members" field|
+| PUT|/genres/:genreId/books/:booksId|UPDATE|books_Genres Relation [ {books_genres}]|Adds genre id to Book's "genres" field/Vice-Versa|
+|DELETE|/genres/:genreId/books/:booksId|DESTROY|books_Genres Relation [ {books_genres}]|Remove genre id from Book's "genres" field/Vice-Versa|
+
 
 #### Things to keep in mind
 
