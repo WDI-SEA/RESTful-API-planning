@@ -150,8 +150,21 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET | /member:id | READ | member info | gets specific user |
+| POST | /member | CREATE | link to member profile | create a new user |
+| PUT | /member/:id | UPDATE | N/A | update member deets |
+| DELETE | /member/:id | DESTROY | N/A | remove member |
+| POST | /member/:id/books/:bookId | CREATE | N/A | check out book |
+| DELETE | /member/:id/books/:bookId | DESTROY | N/A | remove book from member's checked out books |
+| GET | /member/:id/book | READ | list of books | all books currently checked out by member |
+| GET | /book | READ | list of all books | see all books |
+| POST | /book | CREATE | N/A | add book to the library |
+| GET | /book/:id | READ | single book | see a specific book |
+| PUT | /book/:id | UPDATE | N/A | update book deets |
+| DELETE | /book/:id | DESTROY | N/A | remove book from library |
+| POST | /genre | CREATE | N/A | create new genre |
+| POST | /genre/:genreId/book/:bookId | CREATE | N/A | add book to certain genre |
+| DELETE | /genre/:genreId/book/:bookId | DESTROY | N/A | remove genre from book |
 
 #### Things to keep in mind
 
