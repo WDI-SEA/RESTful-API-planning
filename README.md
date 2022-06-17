@@ -150,8 +150,17 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET                  | /members      | READ | Array of all members | Allows a member to find other members |
+| GET                  | /members/:member_id | READ | Single Member | details view of a single member's profile |
+| POST                 | /members      | CREATE | No Data | status 304, redirect to (GET /members/:member_Id |
+| PUT/PATCH            | /members/:member_id | UPDATE | No Data | status 304, redirect to (GET /members/:member_Id) |
+| DELETE               | /members/:member_id | UPDATE | No Data | status 304, redirect to (GET /members) |
+| GET                  | /books | READ | Array of all books | Allows user to see all books added by members|
+| GET                  | /books/:book_id | READ | Single Book details | details view of a single book |
+| POST                 | /members/:member_id/books | CREATE | No data | status 304, redirect to GET /books/:book_Id |
+| PUT/PATCH            | /books/:book_id | UPDATE | No data | status 304, redirect to GET /books/:book_Id |
+| DELETE               | /books/:book_id | DELETE | No data | status 304, redirect to GET /books|
+| GET.                 | /genre | DELETE | No data | status 304, redirect to GET /books|
 
 #### Things to keep in mind
 
