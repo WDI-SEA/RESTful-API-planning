@@ -149,10 +149,22 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
-
+|         GET          | /members:id   | READ | Member info | gets spacific user |
+|         POST         | /members      |CREATE| Link to member profile | create a new user |
+|         PUT          | /member/:id   |UPDATE| no content | update member details |
+|        DELETE        | /member/:id   |DELETE| Remove member |
+|         POST         | /member/:id/books/:bookId |CREATE| check out book 
+|        DELETE        | /member/:id/books/:bookId |DELETE| remove book 
+|         GET          | /member/:id/book | READ | List of books | books checked out by member |
+|
+|         GET          | /book         | READ | List of all the books | see all the books |
+|        POST          | /book         | CREATE | no content | add a book to the library |
+|         GET          | /book/:id     | READ | Single book {book}| see a spacific book | 
+|         PUT          | /book/:id     |UPDATE| no content | Update book details |
+|        DELETE        | /books/:id    |DELETE| no content | remove book from library |
+|         POST         | /genre        | CREATE | no content | create a new genre 
+|         POST          | /genres/:genreId/books/:booksId |CREATE| no content | link book and genre |
+| DELETE | /genres/:genreId/books/:booksId|DELETE| no content |  remover link between genre adn book 
 #### Things to keep in mind
 
 * A `book` can exit in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
