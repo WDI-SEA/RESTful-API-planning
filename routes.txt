@@ -1,0 +1,9 @@
+method  | url               | crud   | response         | notes
+
+GET     | /books            | READ    | array of books   | view of books
+GET     | /genres           | READ    | array of genres  | view of genres
+PUT     | /members/id/books | UPDATE  | array of books   | add book to a members books
+DELETE  | /members/id/books | DESTROY | array of books   | remove from a members books
+GET     | /members          | READ    | array of members | view of members
+GET     | /members/books    | READ    | array of m books | view of members books
+POST    | /books            | CREATE  | array of books   | add
