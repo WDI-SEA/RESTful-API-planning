@@ -150,25 +150,26 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
+| members controller                  |       |  |  |  |
 | GET                  | /members      | READ | Array of all members | Allows a member to find other members |
 | GET                  | /members/:member_id | READ | Single Member | details view of a single member's profile |
-| GET                 | /members/:member_id/books | READ | All books belonging to a member | show all books for one member |
-| POST                 | /members      | CREATE | No Data | status 304, redirect to (GET /members/:member_Id |
-| PUT/PATCH            | /members/:member_id | UPDATE | No Data | status 304, redirect to (GET /members/:member_Id) |
-| DELETE               | /members/:member_id | UPDATE | No Data | status 304, redirect to (GET /members) |
+| GET                  | /members/:member_id/books | READ | All books belonging to a member | show all books for one member |
+| POST                 | /members      | CREATE | No Data | status 204, redirect to (GET /members/:member_Id |
+| PUT/PATCH            | /members/:member_id | UPDATE | No Data | status 204, redirect to (GET /members/:member_Id) |
+| DELETE               | /members/:member_id | UPDATE | No Data | status 204, redirect to (GET /members) |
+| books controller                  |       |  |  |  |
 | GET                  | /books | READ | Array of all books | Allows user to see all books |
 | GET                  | /books/:book_id | READ | Single Book details | details view of a single book |
 | POST                 | /books | CREATE | No data | creates a new book |
-| PUT/PATCH            | /books/:book_id | UPDATE | No data | status 304, redirect to GET /books/:book_Id |
-| PUT/PATCH            | /members/:member_id/books/:book_id | UPDATE | No data | status 304, USER CHECKOUT BOOK, redirect to GET /members/:member_id/books |
-| DELETE           | /members/:member_id/books/:book_id | DESTROY | No data | status 304, USER RETURN BOOK, redirect to GET /members/:member_id/books |
-| DELETE               | /books/:book_id | DELETE | No data | status 304, redirect to GET /books|
-| GET                 | /genre/:genre_id/books | READ | Array of books belonging to a genre | shows all books in a genre|
+| PATCH            | /books/:book_id | UPDATE | No data | status 204, redirect to GET /books/:book_Id |
+| PUT/PATCH            | /members/:member_id/books/:book_id | UPDATE | No data | status 204, USER CHECK IN/OUT BOOK, redirect to GET /members/:member_id/books |
+| DELETE               | /books/:book_id | DELETE | No data | status 204, redirect to GET /books|
+| genre controller                  |       |  |  |  |
+| POST                | /genres     | CREATE  | |  |
+| GET                 | /genres/:genre_id/books | READ | Array of books belonging to a genre | shows all books in a genre|
 | GET                 | /books/:book_id/genres | READ | Array of genres belonging to a book | shows all genres a book has|
-| PUT/PATCH            | /books/:book_id/genres/:genre_id | UPDATE | No data | status 304, adds genre to book, redirect to GET /books/:book_id |
-| Delete           | /books/:book_id/genres/:genre_id | DESTROY | No data | status 304, removes genre from book, redirect to GET /books/:book_id |
-| PUT/PATCH            | /genres/:genre_id/books/:book_id | UPDATE | No data | status 304, adds book to genre, redirect to GET /genres/:genre_id |
-| Delete           | /genres/:genre_id/books/:book_id | DESTROY | No data | status 304, removes book from genre, redirect to GET /genres/:genre_id |
+| PUT/PATCH            | /books/:book_id/genres/:genre_id | UPDATE | No data | status 204, adds or removes genre to book, redirect to GET /books/:book_id |
+| PUT/PATCH            | /genres/:genre_id/books/:book_id | UPDATE | No data | status 204, adds or removes book to genre, redirect to GET /genres/:genre_id |
 | DELETE           | /genres/:genre_id | DESTROY | No data | status 304, deletes a genre , redirect to GET /genres |
 
 
