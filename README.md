@@ -148,10 +148,23 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_) 	      | CRUD    | Response     | Notes                         |
+| -------------------- | -------------------- | ------- | ------------ | ----------------------------- |
+|  POST                | /member              | CREATE  |              | Create new member             |      
+|  GET                 | /member/:id          | READ    |              | Read member info              |
+|  DELETE              | /member/:id          | DELETE  |              | Delete member info            |
+|  PUT                 | /member/:id          | UPDATE  |              | Update member info            |
+|  GET                 | /books               | READ    |              | See all books                 |
+|  GET                 | /books/:id           | READ    |              | Find a particular book        |
+|  DELETE              | /books/:id           | DELETE  |              | Delete book from DB           |
+|  PUT                 | /books/:id           | UPDATE  |              | Check book in or out          |
+|  POST                | /books/:id           | CREATE  |              | Add new book                  |
+|  POST                | /books/:id/genre_id  | CREATE  |              | Add a book to genre           |
+|  DELETE              | /books/:id/genre_id  | DELETE  |              | Remove genre from book        |
+|  GET                 | /books/:id/genre     | READ    |              | All genres to one book        |
+|  GET                 | /genre/              | READ    |              | See all genres                |
+|  GET                 | /genre/:id           | READ    |              | All books in a genre          |
+|  PUT                 | /member/:id/book_id  | UPDATE  |              | Update books check in or our  |
 
 #### Things to keep in mind
 
