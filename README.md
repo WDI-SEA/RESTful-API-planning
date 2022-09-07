@@ -149,10 +149,12 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_)   | URL (_Nouns_)  |  CRUD  |         Response                | Notes |
+| ---------------------- | -------------- | ------ | ------------------------------- | ----- |
+|      Get (members)     |   /members     |   Read  |      Array of members          |       |
+|  Get (members books)   | /members_books |   Read  |     Array of members books     |       |
+|  Put (members books)   | /members_books |  Update |     Updated array m_books      |       |
+| Delete (members books) | /members_books | Destroy | Remove data from array m_books |       |
 
 #### Things to keep in mind
 
@@ -169,3 +171,31 @@ You can use this markdown chart:
 ## Licensing
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)           | CRUD    | Response                                | Notes                                                                                                                         |
+| -------------------- | ----------------------- | ------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| GET                  | `/blogs`                | READ    | Array of all blogs `{ [ blog, blog ] }` | allows a user to see all blogs made by all users                                                                              |
+| GET                  | `/blogs/:blog_id`       | READ    | Single blog details `{ blog }`          | details view of a single blog (aka `/blog/1234`) akin to a 'blog detail view'                                                 |
+| POST                 | `/users/:user_id/blogs` | CREATE  | No Data, or new blog `{ blog }`         | can send back a status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new blog data  |
+| PUT/PATCH            | `/blogs/:blog_id`       | UPDATE  | No data, or updated blog `{ blog }`     | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs/:blog_id`) or just the new user data |
+| DELETE               | `/blogs/:blog_id`       | DESTROY | No data                                 | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs`)                                    |
+    
+
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)     | CRUD    | Response                             | Notes                                                                                                                    |
+| -------------------- | ----------------- | ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| GET                  | `/users`          | READ    | Array of users `{ [ user, user ] }`  | allows a user to find other users                                                                                        |
+| GET                  | `/users/:user_id` | READ    | Single user `{ user }`               | details view of a single user (aka `/users/1234`) akin to a 'user profile'                                               |
+| POST                 | `/users`          | CREATE  | No Data, or new user `{ user }`      | can send back a status `204` (no content), a redirect to where to find data (GET `/users/:user_id`) or just the new user data |
+| PUT/PATCH            | `/users/:user_id` | UPDATE  | No data, or updated user `{ user }`  | can send back a status `204` (no content), a redirect to where to find data (GET `/users/:user_id`) or just the new user data |
+| DELETE               | `/users/:user_id` | DESTROY | No data                              | can send back a status `204` (no content), a redirect to where to find data (GET `/users`)                            
+
+
+    
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                            | CRUD    | Response                                  | Notes                                                                                                                           |
+| -------------------- | ---------------------------------------- | ------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| POST                 | `/users/:user_id/blog/:blog_id/comments` | CREATE  | No Data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs/:_id`) or just the new comment data    |
+| PUT/PATCH            | `/comments/:comments_id`                 | UPDATE  | No data, or updated comment `{ comment }` | can send back a status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new comment data |
+| DELETE               | `/comments/:comments_id`                 | DESTROY | No data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs`)                                      |
+    
