@@ -168,8 +168,8 @@ You can use this markdown chart:
 | HTTP METHOD (_Verb_)      | URL (_Nouns_)              | CRUD      | Response                                  | Notes                                             |
 | -------------------- | -------------                   | ----      | --------                                  | -----                                             |
 |              GET     |  /book_genres                   |    READ   |   array of all genres { [genre, genre] }  |  allow member to view all book genres             |
-|              GET     |  /book_genres/:book_id          |    READ   |   single genre    { genre }               |  status 204 or redirect                           |
-|              GET     | /book_genres/:book_id/:genre_id |   READ    |   No data, or new book { book }           |  status 204 or redirect to /books/:book_id        |
+|              GET     | /book_genres/:genre_id/         |    READ   |   single genre    { genre }               |  status 204 or redirect                           |
+|              GET     | /book_genres/:genre_id/:book_id |    READ   |  single book                              |  status 204 or redirect to /books/:book_id        |
 
 
 | Books                | Book ID                    | Genre     | Genre ID                                  
