@@ -53,9 +53,9 @@ First lets make a RESTful routing chart that describes the full CRUD for our use
 | -------------------- | ----------------- | ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | GET                  | `/users`          | READ    | Array of users `{ [ user, user ] }`  | allows a user to find other users                                                                                        |
 | GET                  | `/users/:user_id` | READ    | Single user `{ user }`               | details view of a single user (aka `/users/1234`) akin to a 'user profile'                                               |
-| POST                 | `/users`          | CREATE  | No Data, or new user `{ user }`      | can send back a status `204` (no content), a redirect to where to find data (GET `/users/:user_id`) or just the new user data |
-| PUT/PATCH            | `/users/:user_id` | UPDATE  | No data, or updated user `{ user }`  | can send back a status `204` (no content), a redirect to where to find data (GET `/users/:user_id`) or just the new user data |
-| DELETE               | `/users/:user_id` | DESTROY | No data                              | can send back a status `204` (no content), a redirect to where to find data (GET `/users`)                               |
+| POST                 | `/users`          | CREATE  | No Data, or new user `{ user }`      | can send status `204` (no content), a redirect to where to find data (GET `/users/:user_id`) or just the new user data |
+| PUT/PATCH            | `/users/:user_id` | UPDATE  | No data, or updated user `{ user }`  | can send status `204` (no content), a redirect to where to find data (GET `/users/:user_id`) or just the new user data |
+| DELETE               | `/users/:user_id` | DESTROY | No data                              | can send status `204` (no content), a redirect to where to find data (GET `/users`)                               |
 
 The above could be described as a template for a `REST API's` endpoints that allow for full CRUD on a database model. Take note of a few things:
 
@@ -88,9 +88,9 @@ Here is our `RESTful` routing chart for CRUD on our blog model:
 | -------------------- | ----------------------- | ------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | GET                  | `/blogs`                | READ    | Array of all blogs `{ [ blog, blog ] }` | allows a user to see all blogs made by all users                                                                              |
 | GET                  | `/blogs/:blog_id`       | READ    | Single blog details `{ blog }`          | details view of a single blog (aka `/blog/1234`) akin to a 'blog detail view'                                                 |
-| POST                 | `/users/:user_id/blogs` | CREATE  | No Data, or new blog `{ blog }`         | can send back a status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new blog data  |
-| PUT/PATCH            | `/blogs/:blog_id`       | UPDATE  | No data, or updated blog `{ blog }`     | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs/:blog_id`) or just the new user data |
-| DELETE               | `/blogs/:blog_id`       | DESTROY | No data                                 | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs`)                                    |
+| POST                 | `/users/:user_id/blogs` | CREATE  | No Data, or new blog `{ blog }`         | can send status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new blog data  |
+| PUT/PATCH            | `/blogs/:blog_id`       | UPDATE  | No data, or updated blog `{ blog }`     | can send status `204` (no content), a redirect to where to find data (GET `/blogs/:blog_id`) or just the new user data |
+| DELETE               | `/blogs/:blog_id`       | DESTROY | No data                                 | can send status `204` (no content), a redirect to where to find data (GET `/blogs`)                                    |
     
 Notice that the one URL that deviates from the users chart is `POST`ing a new blog, since a relationship is involved. A blog cannot be made without a user being involved, which is why this is the only way to create a new blog.
     
@@ -122,13 +122,13 @@ Here is our `RESTful` routing chart for CRUD on our comment model:
     
 | HTTP METHOD (_Verb_) | URL (_Nouns_)                            | CRUD    | Response                                  | Notes                                                                                                                           |
 | -------------------- | ---------------------------------------- | ------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| POST                 | `/users/:user_id/blog/:blog_id/comments` | CREATE  | No Data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs/:_id`) or just the new comment data    |
-| PUT/PATCH            | `/comments/:comments_id`                 | UPDATE  | No data, or updated comment `{ comment }` | can send back a status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new comment data |
-| DELETE               | `/comments/:comments_id`                 | DESTROY | No data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs`)                                      |
+| POST                 | `/users/:user_id/blog/:blog_id/comments` | CREATE  | No Data                                   | can send status `204` (no content), a redirect to where to find data (GET `/blogs/:_id`) or just the new comment data    |
+| PUT/PATCH            | `/comments/:comments_id`                 | UPDATE  | No data, or updated comment `{ comment }` | can send status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new comment data |
+| DELETE               | `/comments/:comments_id`                 | DESTROY | No data                                   | can send status `204` (no content), a redirect to where to find data (GET `/blogs`)                                      |
     
 This chart is actually a little smaller. Why is that? `GET /comments` and `GET /comments/:comment_id` are notably omitted. Why is that?
     
-Does it make sense from as user experience perspective to show all comments made on all blogs? Is that meaningful data? What about a comment details page? Does a comment have enough context outside of its relationship to a blog to merit this route? What about sending back a comment after `POST`ing a new one to the database? Is that the best way to handle sending back comment data?
+Does it make sense from as user experience perspective to show all comments made on all blogs? Is that meaningful data? What about a comment details page? Does a comment have enough context outside of its relationship to a blog to merit this route? What about sending comment after `POST`ing a new one to the database? Is that the best way to handle sending back comment data?
 
 Because a `comment` has no meaningful context without the `post`, these data routes are not needed. There isn't really a user experience that would merit seeing every comment ever made.
 
@@ -153,6 +153,37 @@ You can use this markdown chart:
 | -------------------- | ------------- | ---- | -------- | ----- |
 |                      |               |      |          |       |
 |                      |               |      |          |       |
+
+ GET                    /books                                  READ        Array of books                                   Find all books
+ GET                    /books/:book_id                         READ        One book                                         Details of a one book
+ PUT/PATCH              /members/:member_id/books/              UPDATE      No data, or member updated books                 Can send status 204 (no content), a redirect to where to find data (GET /members/:member_id/books), or just new book data
+ PUT/PATCH              /books/:book_id                         UPDATE      No data, or updated book                         Can send status 204 (no content), a redirect to where to find data (GET /books/:book_id) or just new book data
+ DELETE                 /books/:book_id                         DESTROY     No data                                          Can send status 204 (no content), a redirect where to find data (GET /books)
+
+
+
+
+
+ GET                    /members                                READ        Array of members                                Allows to find all members
+ GET                    /members/:member_id:                    READ        Single Member                                   Details of a single member
+ DELETE                 /members/:member-id:                    DESTROY     No data                                         Can send status 204 (no content), a redirect to where to find data (GET /members)
+ PUT/PATCH              /members/:member-id:                    UPDATE      No data, or updated member                      Can send status 204 (no content), a redirect to where to find data (GET /members/:member_id) or just new member data
+ POST                   /members                                CREATE      No data, or new member                          Can send status of 204 (no content), a redirect where to find data (GET /members/:member_id) or just the new member data
+
+
+
+ GET                    /genres                                 READ        Array of genres                                 Allows to find all genres
+ GET                    /genres/:genre_id                       READ        Single genre                                    Details of a single genre
+ POST                   /genres                                 CREATE      No data, or new genre                           Can send status 204 (no content), a redirect to where to find data
+ DELETE                 /genres/:genre_id                       DESTROY     No data                                         Can send status 204 (no content) or redirect where to find data (GET /genres)
+
+
+
+
+
+
+
+
 
 #### Things to keep in mind
 
