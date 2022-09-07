@@ -151,7 +151,7 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
+|         GET             |      /books         |  READ    |     Getting all books     |       |
 
 | GET                  | /books        | READ | getting all books|
 | GET                   | /books/book_id| READ | get a specific book|
