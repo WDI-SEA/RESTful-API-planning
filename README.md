@@ -156,7 +156,7 @@ You can use this markdown chart:
  GET                    /books                                  READ        Array of books                                   Allows a user to find all books
  GET                    /books/:book_id                         READ        Single book                                      Details of a single book
  PUT/PATCH              /members/:member_id/books/              UPDATE      No data, or member updated books                 Can send back a status 204 (no content), a redirect to where to find data (GET /members/:member_id/books), or just new book data
- PUT/PATCH              /books/:book_id                         UPDATE      No data, or updated book                        
+ PUT/PATCH              /books/:book_id                         UPDATE      No data, or updated book                         Can send back a status 204 (no content), a redirect to where to find data (GET /books/:book_id) or just new book data
  DELETE                 /books/:book_id                         DESTROY     No data                                          Can send back a status 204 (no content), a redirect where to find data (GET /books)
 
 
@@ -175,6 +175,33 @@ You can use this markdown chart:
  GET                    /genres/:genre_id                       READ        Single genre                                    Details of a single genre
  POST                   /genres                                 CREATE      No data, or new genre                           Can send back a status 204 (no content), a redirect to where to find data
  DELETE                 /genres/:genre_id                       DESTROY     No data                                         Can send back a status 204 (no content) or redirect where to find data (GET /genres)
+
+
+
+
+<!-- CLASS REVIEW  -->
+
+MEMBERS
+
+C - POST, /members
+R - GET, /members/:member_id, GET /members/new (creation form)
+U - PUT, /members/:member_id
+D - DELETE, /members/:member_id
+
+BOOKS
+
+C - POST, /books
+R - GET, /books (index), GET /books/:book_id (specific book), GET /books/:member_id (books by member)
+U - PUT, /books/:book_id, PUT, /books/:member_id
+D - DELETE, /books/:book_id
+
+GENRES
+
+C - POST, /genres
+R - GET, /genres, GET, genres/:genre_id, GET, /genres/new (creation form)
+U - PUT /genres/:genre_id
+D - DELETE, /genres/:genre_id
+
 
 
 #### Things to keep in mind
