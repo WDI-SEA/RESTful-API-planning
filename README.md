@@ -149,10 +149,24 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response           | Notes |
+| -------------------- | ------------- | ---- | --------           | ----- |
+| GET                  | /books        | READ | Array of all books |Allow user to see a list of all books       |
+| GET                  | /members      | READ | Array of all members|Allow admin user to see a list of all members |
+| GET                  | /members/:member_id | READ | Single member {member} |Detail of single member
+| GET                  | books/:book_id | READ | Single book {book} | Detail of single book
+| POST | /members | CREATE | No Data, or new member {member} | status 204 (no content) or redirect to data (GET /members/:member_id)
+| POST | /books | CREATE | No Data, or new book {book} | status 204 (no content) or redirect to data (GET /books/:book_id)
+GET | /members/member_id/books | READ | Array of books borrowed by member | List of all books borrowed by member
+POST | /members/member_id/books/:book_id | CREATE | Add new book borrowed | redirect to /members/member_id/books
+DELETE | /members/member_id/books/:book_id | DESTROY | delete book returned | redirect to /members/member_id/books
+GET | /genres | READ | Array of genres | Allow user to see a list of available genres
+GET | /books/book_id/genres | READ | Array of genres | list of genres for a specific book
+GET | genres/genre_id/books | READ | Array of books | books list per each genre
+POST | genres/genre_id/books | CREATE | Add new book to a genre | redirect to genres/books
+POST | /books/book_id/genres | CREATE | Add a new genre to a single book | redirect to /books/book_id
+
+
 
 #### Things to keep in mind
 
