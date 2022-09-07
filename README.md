@@ -151,9 +151,13 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET                  |  /books       READ |Array of books 
+{ [ book, book ] }      |  allows a user to find books
+| GET                  | /books/:genre  | READ | array of books by genre
+| POST                 | /books         | CREATE |redirect to ??? |allows for adding a book to the library
 
+| PUT/PATCH            | /books/:genre/:id | UPDATE| update({ request body}, where: {:id} })      |users to checkout/return books
+| DELETE               |
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
