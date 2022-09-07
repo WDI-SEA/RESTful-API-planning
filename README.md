@@ -169,6 +169,26 @@ You can use this markdown chart:
 | PUT/PATCH            | `/books/:book_id`             | UPDATE  | No data, or updated book `{ book }`                           | can send back a status 204 (no content) or redirect to where to find data (GET /books/:book:id) or just the new book data |
 | DELETE               | `/books/:book_id`             | DESTROY | No data                                                       | can send back a status 204 (no content) or redirect to here to find data (GET /books) |
 
+<!-- 
+MEMBERS
+C - POST; /members
+R - GET; /members/:member_id, /members/new
+U - PUT; /members/:member_id
+D - DELETE; /members/:member_id
+
+BOOKS
+C - POST; /books
+R - GET; /books, books/:book_id, /books/:member_id, /books/:genre_id    <- doesn't make sense...
+U - PUT; /books/:book_id, /books/:member_id
+D - DELETE; /books/:book_id
+
+GENRES
+C - POST; /genres
+R - GET; /genres, /genres/:genre_id, /genres/new
+U - PUT; /genre/:genre_id
+D - DELETE; /genre/:genre_id
+ -->
+ 
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
