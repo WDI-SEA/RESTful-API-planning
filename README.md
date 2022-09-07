@@ -152,7 +152,24 @@ You can use this markdown chart:
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
 |                      |               |      |          |       |
-|                      |               |      |          |       |
+
+| GET                  | /books        | READ | getting all books|
+| GET                   | /books/book_id| READ | get a specific book|
+| GET                  | /genres       | READ | get all book genres|
+| GET                  | /genres/genre_id| READ | get a specific genre's books
+| GET                  | /members      | READ | getting all members|
+| GET                  | /members/:memberID| READ | Getting a specific member's ID|
+|GET                   | /books/memberID | READ | getting a member's books |
+| POST                 | /books        | CREATE | creating a new book |
+| POST                 | /genres       | CREATE | creating a new genre |
+| POST                 | /members      | CREATE | creating a new member |
+| POST                 | / members/book_id | CREATE | assigning that a member has checked out a book|
+|DELETE                | /members/book_id| DELETE | deleting a book from a member so it can ve reassigned |
+
+
+
+
+
 
 #### Things to keep in mind
 
