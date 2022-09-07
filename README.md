@@ -151,8 +151,13 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+|             GET      |     /BOOKS    | R    |BOOKS IN LIBRARY  |  
+              GET      |    /BOOKS/GENRE | R | Books based on a certain genre i.e horror or Romance novels
+|             GET      |   /BOOKS/:id  | R    |Grab specific book|
+              GET       /Members/:id  C grab the member who will check out the book
+              POST      /Members/:id/book_id | U | Update database with the book that was checked out by the member
+            DELETE      | /books/:id | D | Delete the book from the library, so it cannot be checked out again
+            <!-- I have a feeling I did not understand this correctly and completed it wrong. -->
 
 #### Things to keep in mind
 
