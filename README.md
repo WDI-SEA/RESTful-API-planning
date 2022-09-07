@@ -149,10 +149,18 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD            | Response               | Notes |
+| -------------------- | ------------- | --------------- | ---------------------- | ----- |
+| GET       |    /member    |  READ  |  array of all users  |  allows one to find users  |
+| GET       |    /book/:book_id    |  READ  |  single book  |  allows one to find specific book details|
+| GET       |    /book   |  READ  |  array of all users  |  allows one to find all books |
+| GET       |  /members/:user_id   | READ   |  single user |  member "profile" and details |
+| GET       |    /genres    |  READ  |  array of all genres  |  allows one to find all books in catagories for each|
+| GET       |    /genres/:genre_id    |  READ  |  array of all books in genres  |  allows one to find all books in specific genre |
+| PUT/PATCH |  /members/:user_id   | UPDATE |  update member book status |  lists book status (checkout or return)     |
+| PUT/PATCH |  /members/:user_id   | UPDATE |  update member book status |  lists book status (checkout or return)     |
+| PUT/PATCH |  /members/:user_id   | DESTROY |  remove user    |   cancelled membership    |
+| POST   |  /memeber/:user_id      | CREATE  |   new user     |   new memebership   |
 
 #### Things to keep in mind
 
