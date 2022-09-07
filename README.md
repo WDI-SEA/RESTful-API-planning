@@ -149,10 +149,21 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                     | CRUD   | Response                                                            | Notes                                                             |
+| -------------------- | --------------------------------- | ------ | ------------------------------------------------------------------- | ------------------------------------------------------------------
+| GET                  | /books                            | READ   | Array of all books {[book1, book2]}                                 | Allows a user to see all books
+| GET                  | /members                          | READ   | Array of all members {[members1, members2]}                         | Allows a member to find other members
+| GET                  | /members/:member_id               | READ   | Single member {member}                                              | Details views of a single member(aka /member/1234)
+| GET                  | /books/:book_id                   | READ   | Single book {book}                                                  | Details of a single book
+| GET                  | /genres                           | READ   | Array of all genres {[genre1, genre2]}                              | Allows a user to see all genres
+| GET                  | /genres/:genre_id                 | READ   | Single genre {genre}                                                | Details of a single genre
+| GET                  | /books/: genre_id                 | READ   | Array of all genre IDs of each book                                 | Being able to see the genre ID that all of the books have
+| GET                  | /genres/:genre_id/:book_id        | READ   | Array of all books under a genre ID                                 | Being able to see all of the books under a genre
+| POST                 | /books                            | CREATE | No data or new book {book}                                          | Status 204 (no content) or redirect to data (/books/:book_id)
+| POST                 | /members                          | CREATE | No data or new member {member}                                      | Status 204 (no content) or redirect to data (/members/:member_id)
+| POST                 | /members/member_id/books/book_id  | CREATE | New book that a member has checked out                              | Member checking out a book
+| POST                 | /members/member_id/books          | CREATE | An array of books per user                                          | List of all books a user has checked out
+| DELETE               | /members/member_id/books/books_id | DESTROY| Delete a book that was returned                                     | Member returning a book
 
 #### Things to keep in mind
 
