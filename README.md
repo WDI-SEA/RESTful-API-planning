@@ -149,10 +149,21 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)          | CRUD      |              Response                     | Notes                                                    |
+| -------------------- | -------------          | ----      | -----------------------------------       | -----                                                    |
+| GET                  | /books                 | READ      | Array of all books                        | Allows user to get a list of all books                   |
+| GET                  | /books/:id             | READ      | Grabs specific book                       | Allows user to read information about specific book      |
+| GET                  | /genres                | READ      | Array of all genres                       | Allows user to get a list of all genres                  |
+| GET                  | /genres/:id            | READ      | Lists all books under specific genre      | Allows user to see all books under a genre               |
+| POST                 | /members/:id/books/:id | CREATE    | Assigns a book to a member from their ID  | Allows a user to checkout a book                         |
+| GET                  | /members/:id/books     | READ      | List of books under a member              | User can see all books checked out by them               |
+| DELETE               | /members/:id/books/:id | DESTROY   | Returns a book to the library             | User returns a book to the library                       |
+| POST                 | /genres/:id/books/:id  | CREATE    | Adds a book to a genre                    | Librarian can add a book to a genre                      |
+| DELETE               | /genres/:id/books/:id  | DESTROY   | Deletes a book from a genre               | Librarian can delete a book from a genre                 |
+| GET                  | /members               | READ      | Array of all members                      | Librarian can see all current members                    |
+| POST                 | /members/:id           | CREATE    | Adds a member                             | Librarian can add a member to the members list           |
+| DELETE               | /members/:id           | DESTROY   | Deletes a member                          | Librarian can delete a member                            |
+| GET                  |                        |           |                                           |                                                          |
 
 #### Things to keep in mind
 
