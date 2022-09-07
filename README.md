@@ -6,11 +6,11 @@
 
 * Fork and clone this repo
 * Completely read through this repo, the links from the **Reading Preparation** section, and the **How DB Models Relate to Routes in REST**
-* create a restful routing chart in this `.md` file using the template provided in the **Deliverable: Planning a `REST API`** by following the directions there
+* Create a restful routing chart in this `.md` file using the template provided in the **Deliverable: Planning a `REST API`** by following the directions there
 
 ## What is REST?
 
-`REST` is an acronym for *_representational state transfer_*, and it describes a software architecture pattern that was created to solve software engineering issues presented by the world wide web. `REST` describes how an API should behave in order to maintain scalability, uniformity and backwards compatibility. Essentially, `REST` is a set of rules that if you follow, your web application's backed will be free of extremely complex and otherwise difficult to avoid bugs! You just need to learn the rules of a `RESTful API`, and how to apply them.
+`REST` is an acronym for *_representational state transfer_*, and it describes a software architecture pattern that was created to solve software engineering issues presented by the world wide web. `REST` describes how an API should behave in order to maintain scalability, uniformity and backwards compatibility. Essentially, `REST` is a set of rules that if you follow, your web application's backend will be free of extremely complex and otherwise difficult to avoid bugs! You just need to learn the rules of a `RESTful API`, and how to apply them.
 
 ## Reading Preparation
 
@@ -22,7 +22,7 @@ The simple English Wikipedia [used to have](https://simple.wikipedia.org/w/index
 
 > The World Wide Web is the largest example of a RESTful system today. Physical libraries are its non-RESTful equivalent. Instead of sending a physical electronic copy of every digital resource to each person or library, we assign each resource a URL identifier "http://example.com", then access the actual content via the Internet rather than retrieving a local copy from an optical disk or a hard drive. 
 
-Read through the following links, and keep the following in mind: `REST` is a based on resources and actions that can be taken on them. Practically what this means for us a **_resource_** is a database `model` or `table`, an **_action_** is a database [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) action, and **_URIs_** are routes on the backend.
+Read through the following links, and keep the following in mind: `REST` is based on resources and actions that can be taken on them. Practically, what this means for us is: a **_resource_** is a database `model` or `table`, an **_action_** is a database [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) action, and **_URIs_** are routes on the backend.
 
 * [Data modeling](https://medium.com/clarusway/types-of-relationships-in-data-modelling-2d5138aa62b4) -- this covers types of data relationships that are relevant to `REST API`s and `SQL` databases.
 * [REST API Quick Tips](https://restapitutorial.com/lessons/restquicktips.html) -- broad stroke overview of `REST` ideas.
@@ -46,7 +46,7 @@ This social media app will allow users to blog, comment on blogs, and search for
 
 Remember, [URLs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) represent nouns in a `RESTful API` and [HTTP methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) represent the actions (verbs) taken on those nouns.
 
-First lets make a RESTful routing chart that describes the full CRUD for our user model. This chart will include the `HTTP METHOD`, `URL`, `CRUD action` and `response` of each route. As a note, some auth setups make is so the user model and information would be hidden from the plain view of the user (in the URLs and such, for example), but assume that ours does not for this example.
+First lets make a RESTful routing chart that describes the full CRUD for our user model. This chart will include the `HTTP METHOD`, `URL`, `CRUD action` and `response` of each route. As a note, some auth setups make it so the user model and information would be hidden from the plain view of the user (in the URLs and such, for example), but assume that ours does not for this example.
 
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_)     | CRUD    | Response                             | Notes                                                                                                                    |
@@ -94,7 +94,7 @@ Here is our `RESTful` routing chart for CRUD on our blog model:
     
 Notice that the one URL that deviates from the users chart is `POST`ing a new blog, since a relationship is involved. A blog cannot be made without a user being involved, which is why this is the only way to create a new blog.
     
-What about retrieving all of a single users blogs? It is present state, `GET /users/:user_id`, could serve this purpose; sending all of the user data to display including their blogs, but depending on how your API needed to serve data, it would make sense in some circumstances to have a `POST /users/:user_id/blogs` to retrieve all of the blog made by the user with an id of `:user_id`. The purpose of `REST` is to uniformly describe actions taken on resources, not strictly dictate the structure of an `API`.
+What about retrieving all of a single users blogs? In its present state, `GET /users/:user_id`, could serve this purpose; sending all of the user data to display including their blogs, but depending on how your API needed to serve data, it would make sense in some circumstances to have a `GET /users/:user_id/blogs` to retrieve all of the blog made by the user with an id of `:user_id`. The purpose of `REST` is to uniformly describe actions taken on resources, not strictly dictate the structure of an `API`.
 
 Sometimes a _URL_ with more than one variadic route parameter is referred to as a _Compound Url_.
 </details>
@@ -142,24 +142,22 @@ Now it is time for you to plan a `RESTful API` of your own. Take a look at this 
 ![library ERD](./imgs/lib-erd.drawio.png)
 
 * One `member` can have many `books`. `Members`:`Books` have a **1:M** relationship. This relationship describes books being checked out of the library. It is possible for a `book` to not have a `member`, if it is not checked out.
-* One `book` can have many `genres`, and a `genre` can have many `books`. `Books`:`Genres` have a **N:M** relationship. 
-* The table `books_genres` is simply a join table, used to to maintain a **N:M** relationship. It shouldn't be a part of any **URL**.
+* One `book` can have many `genres`, and a `genre` can have many `books`. `Books`:`Genres` have a **M:M** relationship. 
+* The table `books_genres` is simply a join table, used to to maintain a **M:M** relationship. It shouldn't be a part of any **URL**.
 
 Your Task is to write a `RESTful` routing chart for the library system's API. Your API will need to serve full CRUD on `members`, `books`, and `genres`. Do not worry about authentication, another team is handling that. 
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)         | CRUD    | Response                                      | Notes |
+
 
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
 * You will need to create routes that allow `members` to checkout `books` and return `books` to the library. What HTTP methods should you use for these? What _URLs_ would best describe that models that are having actions taken on them _and_ the relationships between the data.
 	* **HINT:** if your _URLs_ have the word `checkout` in them, you are falling victim to one of the dreaded **_anti-patterns_**!
-* `books` and `genres` are **N:M** and we have the following user stories. Think of the  `HTTP methods` first and then think about the _URLs_. How can you best describe the data relationships in your _URLs_:
+* `books` and `genres` are **M:M** and we have the following user stories. Think of the  `HTTP methods` first and then think about the _URLs_. How can you best describe the data relationships in your _URLs_:
 	* as a user, I would like to see all the genres a particular book is in.
 	* as a user, I would like to see all the books a particular genre has is in it.
 * You will need routes to handle adding a book to a genre and vice-versa
