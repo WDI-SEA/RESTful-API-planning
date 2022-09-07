@@ -151,8 +151,10 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET                  | /books        | READ | array of books|  |
+| GET                  | /genres       | READ | array of genres| |
+| PUT/PATCH            | /books/genre_id | UPDATE | adding genres to a book| |
+| PUT/PATCH            | /genres/book_id | UPDATE | adding books to a genre| |  
 
 #### Things to keep in mind
 
