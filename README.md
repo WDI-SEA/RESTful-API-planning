@@ -165,14 +165,18 @@ You can use this markdown chart:
 |           PUT/PATCH  |  /books/:book_id/checkout  |  UPDATE   |   No data, or new book { book }           |  status 204 or redirect to /books/:book_id        |
 |              DELETE  |  /books/:book_id/return    |  DESTROY  |          No data                          |  status 204 or redirect to /books/:book_id        |
 
-| HTTP METHOD (_Verb_)      | URL (_Nouns_)         | CRUD      | Response                                  | Notes                                             |
-| -------------------- | -------------              | ----      | --------                                  | -----                                             |
-|              GET     |  /books/:book_id/genres             |    READ   |   array of all genres { [genre, genre] }  |  allow member to view all book genres             |
-|              GET     |  /books/genres/:genre_id   |    READ   |   single genre    { genre }               |  status 204 or redirect                           |
-|              POST    | /books/genres/:genre_id    |   CREATE  |   No data, or new book { book }           |  status 204 or redirect to /books/:book_id        |
-|           PUT/PATCH  |  /books/:genre_id          |  UPDATE   |   No data, or new book { book }           |  status 204 or redirect to /books/:book_id        |
-|              DELETE  |  /books/:genre_id          |  DESTROY  |          No data                          |  status 204 or redirect to /books/:book_id        |
+| HTTP METHOD (_Verb_)      | URL (_Nouns_)              | CRUD      | Response                                  | Notes                                             |
+| -------------------- | -------------                   | ----      | --------                                  | -----                                             |
+|              GET     |  /book_genres                   |    READ   |   array of all genres { [genre, genre] }  |  allow member to view all book genres             |
+|              GET     |  /book_genres/:book_id          |    READ   |   single genre    { genre }               |  status 204 or redirect                           |
+|              GET     | /book_genres/:book_id/:genre_id |   READ    |   No data, or new book { book }           |  status 204 or redirect to /books/:book_id        |
 
+
+| Books                | Book ID                    | Genre     | Genre ID                                  
+| -------------------- | -------------              | ----      | --------                                  
+|              xxx     |  1234                      |    xxx    |   1234  
+|              xxx     |  1234                      |    xxx    |   1234               
+|              xxx     |  1234                      |    xxx    |   1234          
 
 #### Things to keep in mind
 
