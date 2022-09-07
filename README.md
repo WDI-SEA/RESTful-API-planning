@@ -163,7 +163,9 @@ You can use this markdown chart:
 | DELETE               | /books/:book_id      | DESTROY | No data                     | Bye bye |
 | GET                  | /genres              | READ    | Array of all genres         | Allows users to see all the different generes |
 | GET                  | /genres/:genre_id    | READ    | Details on a specific genre | Details on a single genre like all the books belonging to that genre |
-| POST                 | /genres              | CREATE  | No data or new genre        | |
+| POST                 | /genres              | CREATE  | No data or new genre        | Can redirect to new genre details |
+| PUT/PATCH            | /genres/:genre_id    | UPDATE  | No data or updated genre    | Can redirect to updated genre details |
+| DELETE               | /genres/:genre_id    | DESTROY | No data                     | C'ya |
 
 
 #### Things to keep in mind
