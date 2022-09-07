@@ -151,14 +151,24 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|             GET      |     /BOOKS    | R    |BOOKS IN LIBRARY  |  
-              GET      |    /BOOKS/GENRE | R | Books based on a certain genre i.e horror or Romance novels
-|             GET      |   /BOOKS/:id  | R    |Grab specific book|
-              GET       /Members/:id  C grab the member who will check out the book
-              POST      /Members/:id/book_id | U | Update database with the book that was checked out by the member
-            DELETE      | /books/:id | D | Delete the book from the library, so it cannot be checked out again
+|             GET      |/memebers/:memeber_id| R | GET, /members/new
+|             POST     | /memebers/    | C | 
+|             PUT      | /Members/member_id | U |
+|             DELETE   |/members/:member_id | D|
             <!-- I have a feeling I did not understand this correctly and completed it wrong. -->
 
+Books:
+|             GET |/books (index)| R | GET /books/:book_id (specific book) | GET /books/:member_id (books by member)
+|             POST | /books | C
+|             PUT | /books/:book_id | PUT, /books/:member_Id | U |
+|             DELETE /books/:book_id | D |
+
+GENRE
+
+|       GET | /genres | GET | /genres/new
+|       PST | /genres | C   | /genres/new
+|       PUT |/genres/genres:id | R |
+|       DELETE /genres/genres:id | D |
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
