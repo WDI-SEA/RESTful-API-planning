@@ -153,8 +153,14 @@ You can use this markdown chart:
 | -------------------- | ------------- | ---- | -------- | ----- |
 | GET                  | /books        | READ | array of books|  |
 | GET                  | /genres       | READ | array of genres| |
-| PUT/PATCH            | /books/genre_id | UPDATE | adding genres to a book| |
-| PUT/PATCH            | /genres/book_id | UPDATE | adding books to a genre| |  
+| GET                  |/members/:member_id|READ|array of members| | 
+| PUT                  |/members/:member_id|UPDATE|
+| DELETE               |/members/:member_id|DESTROY|
+| GET                  |/books/:member_id|READ|see books checked out to member
+| PUT                  |/books/:member_id|UPDATE | edit book checked out status
+| DELETE               |/books/:book_id | DESTROY| Delete boook
+| PUT/PATCH           | /books/genre_id | UPDATE | adding genres to a book| |
+| PUT/PATCH           | /genres/book_id | UPDATE | adding books to a genre| |  
 
 #### Things to keep in mind
 
