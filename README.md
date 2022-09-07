@@ -149,10 +149,22 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)        | CRUD    | Response                    | Notes |
+| -------------------- | -------------------- | ------- | --------------------------- | ----- |
+| GET                  | /members             | READ    | Array of all members        | Allows users to see all members of the library |
+| GET                  | /members/:member_id  | READ    | Single member details       | Details on a single member, including what books they have checked out |
+| POST                 | /members             | CREATE  | No data or new member       | Can redirect to new member's details |
+| PUT/PATCH            | /members/:member_id/ | UPDATE  | No data or updated member   | Can redirct to updated member's details |
+| DELETE               | /members:member_id   | DESTROY | No data                     | Goodbye |
+| GET                  | /books               | READ    | Array of all books          | Lets users see all the books in the library |
+| GET                  | /books/:book_id      | READ    | Details on a single book    | Lets users see details on a specific book like if/who it's checked out to and what genre(s) it has |
+| POST                 | /books               | CREATE  | No data or new book         | Can redirect to new book details |
+| PUT/PATCH            | /books/:book_id      | UPDATE  | No data or updated book     | Here is where we can checkout books? By changing the FK with the appropriate member id or removing it |
+| DELETE               | /books/:book_id      | DESTROY | No data                     | Bye bye |
+| GET                  | /genres              | READ    | Array of all genres         | Allows users to see all the different generes |
+| GET                  | /genres/:genre_id    | READ    | Details on a specific genre | Details on a single genre like all the books belonging to that genre |
+| POST                 | /genres              | CREATE  | No data or new genre        | |
+
 
 #### Things to keep in mind
 
