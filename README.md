@@ -149,8 +149,25 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_)         | CRUD    | Response                                      | Notes |
-
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                 | CRUD    | Response                                                      | Notes |
+| -------------------- | -------------                 | ----    | --------                                                      | ----- |
+| GET                  | `/members`                    | READ    | Array of all members `{ [ member, member ] }`                 | allows a user to see all members |
+| GET                  | `/members/:member_id`         | READ    | Single member details `{ member }`                            | details view of a single member |
+| GET                  | `/members/:member_id/books`   | READ    | Single member's checked-out books `{ member }`                | allows a user to see all books checked out by a single member |
+| POST                 | `/members`                    | CREATE  | No data, or new member `{ member }`                           | can send back a status 204 (no content) or redirect to where to find data (GET /members/:member:id) or just the new member data |
+<!-- Not sure how to make new checked-out book by a member require a genre (see below) -->
+| POST                 | `/members/:member_id/books`   | CREATE  | No data, or new book `{ book }`                               | can send back a status 204 (no content) or redirect to where to find data (GET /books/:book:id) or just the new book data |
+| PUT/PATCH            | `/members/:member_id`         | UPDATE  | No data, or updated member `{ member }`                       | can send back a status 204 (no content) or redirect to where to find data (GET /members/:member:id) or just the new member data |
+| DELETE               | `/members/:member_id`         | DESTROY | No data                                                       | can send back a status 204 (no content) or redirect to here to find data (GET /members) |
+| GET                  | `/genres`                     | READ    | Array of all genres `{ [ genre, genre ] }`                    | allows a user to see all genres |
+| POST                 | `/genres`                     | CREATE  | No data, or new genre `{ genre }`                             | can send back a status 204 (no content) or redirect to where to find data (GET /genres/:genre:id) or just the new genre data |
+| PUT/PATCH            | `/genres/:genre_id`           | UPDATE  | No data, or updated genre `{ genre }`                         | can send back a status 204 (no content) or redirect to where to find data (GET /genres/:genre:id) or just the new genre data |
+| DELETE               | `/genres/:genre_id`           | DESTROY | No data                                                       | can send back a status 204 (no content) or redirect to here to find data (GET /genres) |
+| GET                  | `/books`                      | READ    | Array of all books in a genre`{ [ book, book ] }`             | allows a user to see all books |
+| GET                  | `/books/:book_id`             | READ    | Single book details `{ book }`                                | details view of a single book |
+| POST                 | `/genres/:genre_id/books/`    | CREATE  | No data, or new book `{ book }`                               | can send back a status 204 (no content) or redirect to where to find data (GET /books/:book:id) or just the new book data |
+| PUT/PATCH            | `/books/:book_id`             | UPDATE  | No data, or updated book `{ book }`                           | can send back a status 204 (no content) or redirect to where to find data (GET /books/:book:id) or just the new book data |
+| DELETE               | `/books/:book_id`             | DESTROY | No data                                                       | can send back a status 204 (no content) or redirect to here to find data (GET /books) |
 
 #### Things to keep in mind
 
