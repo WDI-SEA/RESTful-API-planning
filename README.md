@@ -149,10 +149,27 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                       | CRUD   | Response                                          | Notes                                 |
+| -------------------- | ----------------------------------- | ------ | ------------------------------------------------- | --------------------------------------|
+| POST                 | /books                              | CREATE | No data or new book {book}                        | Redirect to /books/:book_id           |
+| POST                 | /members                            | CREATE | No data or new member {member}                    | Redirect to /members/:member_id       |
+| POST                 | /genres                             | CREATE | No data or new genre {genre}                      | Redirect to /genre                    |
+| POST                 | /members/:members_id/books/:book_id | CREATE | Add new book {book} to members list {[book,book]} | Redirect to /members/:member_id/books |
+| POST                 | /books/;book_id/genres/genre_id     | CREATE | Add ne genre {genre} to specific book {book}      | Redirect to /books/:book_id           |
+| GET                  | /books                              | READ   | Array of books {[book,book]}                      |                                       |
+| GET                  | /books/:book_id                     | READ   | List specific book {book}                         |                                       |
+| GET                  | /members                            | READ   | Array of members {[members,members]}              |                                       |
+| GET                  | /members/:member_id                 | READ   | List specific member {member}                     |                                       |
+| GET                  | /genres                             | READ   | Array of genres {[genre,genre]}                   |                                       |
+| GET                  | /genres/genre_id                    | READ   | List specific genre {genre}                       |                                       |
+| GET                  | /members/:members_id/books          | READ   | List books {[book,book]} by {member}              |                                       | 
+| GET                  | /genres/:genre_id/books             | READ   | List books {[book,book]} by {genre}               |                                       | 
+| GET                  | /books/:book_id/genre               | READ   | List genre {[genre,genre]} by {book}              |                                       | 
+| DELETE               | /members/:members_id/books/book_id  | UPDATE | Remove book from members list                     | Redirect to /members/:member_id/books |
+| DELETE               | /books/:book_id/genres/:genre_id    | UPDATE | Remove a genre from a boook                       | Redirect to /books/book_id/genres     |
+| DELETE               | /books/:book_id                     | DELETE | Delete book from database                         | Redirect to /books                    |
+| DELETE               | /members/:members_id                | DELETE | Remove member from members list                   | Redirect to /members                  |
+| DELETE               | /genres/:genre_id                   | DELETE | Remove gemre from genres list                     | Redirect to /genres                   |
 
 #### Things to keep in mind
 
