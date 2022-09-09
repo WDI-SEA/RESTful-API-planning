@@ -149,10 +149,34 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+## MEMBERS
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                 | CRUD  | Response                                | Notes |
+| -------------------- | ----------------------------- | ----- | --------------------------------------- | ----- |
+|         POST         |  /members/new                 |CREATE | Create new member                       |       |
+|         GET          |/members/books/:id/:user_id    |READ   | Read member's checked out books history |       |
+|         PUT          |  /members                     |UPDATE |  Update with new member                 |       |
+|        DELETE        |  /members/:id                 |DESTROY| Delete current user from database       |       |
+
+## BOOKS
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                  | CRUD  | Response                        | Notes |
+| -------------------- | ------------------------------ | ----- | ------------------------------- | ----- |
+|         POST         | /books/new                     |CREATE | Add a new Book                  |       |
+|         GET          | /books                         |READ   | Array of all the books          |       |
+|         GET          |/books_genres/:book_id/:genre_id|READ   |Get all genres that book is in   |       |
+|         PUT          |/books                          |UPDATE |Update the db with the new book  |       |
+|        DELETE        | /books/:id                     |DESTROY|Delete current book from database|       |
+
+## GENRES
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                  | CRUD  | Response                         | Notes |
+| -------------------- | ------------------------------ | ----- | -------------------------------- | ----- |
+|         POST         | /genres/new                    |CREATE | Add a new Genre                  |       |
+|         GET          | /genres                        |READ   | Array of all the genres          |       |
+|         GET          |/genres_books/:genre_id/:book_id|READ   |Get all books with that genre     |       |
+|         PUT          |/genres                         |UPDATE |Update the db with the new genre  |       |
+|        DELETE        | /genres/:id                    |DESTROY|Delete current genre from database|       |
 
 #### Things to keep in mind
 
