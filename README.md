@@ -148,11 +148,39 @@ Now it is time for you to plan a `RESTful API` of your own. Take a look at this 
 Your Task is to write a `RESTful` routing chart for the library system's API. Your API will need to serve full CRUD on `members`, `books`, and `genres`. Do not worry about authentication, another team is handling that. 
 
 You can use this markdown chart:
+MEMBERS
+-----------------------------------------------------------------------------------------
+| HTTP METHOD (_Verb_) | URL (_Nouns_)       | CRUD  | Response                 | Notes |
+| -------------------- | ------------------- | ----  | ------------------------ | ----- |
+| POST                 | /members            |   C   | No Data or New User      |       |
+| GET                  | /members/:member_id |   R   | Array of members         |       |
+| GET                  | /members/new        |   R   | New member form          |       |
+| PUT                  | /members/:member_id |   U   | No Data or Updated User  |       |
+| DELETE               | /members/:member_id |   D   | No Data                  |       |
+-----------------------------------------------------------------------------------------
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+BOOKS
+-----------------------------------------------------------------------------------------
+| POST                 | /books              |   C   | No Data or New Book      |       |
+| GET                  | /books              |   R   | Array of books           |       |
+| GET                  | /books/:book_id     |   R   | Specific boook data      |       |
+| GET                  | /books/:member_id   |   R   | Books under member id    |       |
+| GET                  | /books/:genre_id    |   R   | Books under genre id     |       |
+| PUT                  | /books/:book_id     |   U   | No Data or Update Book   |       |
+| PUT                  | /books/:member_id   |   U   | No Data or Update Owner  |       |
+| PUT                  | /books/:genre_id    |   U   | No Data or Update Genre  |       |
+| DELETE               | /books/:book_id     |   D   | No Data                  |       |
+-----------------------------------------------------------------------------------------
+
+GENRES
+-----------------------------------------------------------------------------------------
+| POST                 | /genres             |   C   | No Data or New Genre     |       |
+| GET                  | /genres             |   R   | Array of Genres          |       |
+| GET                  | /genres/:genre_id   |   R   | Specific Genre Data      |       |
+| GET                  | /genres/new         |   R   | New Genre Form           |       |
+| PUT                  | /genres/:genre_id   |   U   | No Data or Updated Genre |       |
+| DELETE               | /genres/:genre_id   |   D   | No Data                  |       |
+-----------------------------------------------------------------------------------------
 
 #### Things to keep in mind
 
