@@ -149,10 +149,14 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)     | CRUD    | Response                             | Notes                                                                                                                    |
+| -------------------- | ----------------- | ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| GET                  | `/members`        | READ    | Array of members `{ [ members, members ] }`  | allows a user to find other members                                                                                        |
+| GET                  | `/member/:member_id` | READ    | Single member `{ member }`               | details view of a single member (aka `/members/1234`) akin to a 'member profile'                                               |
+| POST                 | `/members`          | CREATE  | No Data, or new member `{ member }`      | can send back a status `204` (no content), a redirect to where to find data (GET `/members/:member_id`) or just the new member data |
+| PUT/PATCH            | `/member/:member_id` | UPDATE  | No data, or updated member `{ member }`  | can send back a status `204` (no content), a redirect to where to find data (GET `/members/:member_id`) or just the new member data |
+| DELETE               | `/member/:member_id` | DESTROY | No data                              | can send back a status `204` (no content), a redirect to where to find data (GET `/members`)                               |
+
 
 #### Things to keep in mind
 
