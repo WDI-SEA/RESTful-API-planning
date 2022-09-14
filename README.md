@@ -155,7 +155,6 @@ You can use this markdown chart:
 | GET                  | `/members/:member_id`         | READ    | Single member details `{ member }`                            | details view of a single member |
 | GET                  | `/members/:member_id/books`   | READ    | Single member's checked-out books `{ member }`                | allows a user to see all books checked out by a single member |
 | POST                 | `/members`                    | CREATE  | No data, or new member `{ member }`                           | can send back a status 204 (no content) or redirect to where to find data (GET /members/:member:id) or just the new member data |
-<!-- Not sure how to make new checked-out book by a member require a genre (see below) -->
 | POST                 | `/members/:member_id/books`   | CREATE  | No data, or new book `{ book }`                               | can send back a status 204 (no content) or redirect to where to find data (GET /books/:book:id) or just the new book data |
 | PUT/PATCH            | `/members/:member_id`         | UPDATE  | No data, or updated member `{ member }`                       | can send back a status 204 (no content) or redirect to where to find data (GET /members/:member:id) or just the new member data |
 | DELETE               | `/members/:member_id`         | DESTROY | No data                                                       | can send back a status 204 (no content) or redirect to here to find data (GET /members) |
