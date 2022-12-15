@@ -154,6 +154,8 @@ You can use this markdown chart:
 |                      |               |      |          |       |
 |                      |               |      |          |       |
 
+![Screen Shot 2022-12-15 at 10 00 25 AM](https://user-images.githubusercontent.com/117604017/207934064-4eeba86e-0e1f-4928-adcd-f280ec93cccf.png)
+
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
