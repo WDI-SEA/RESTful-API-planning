@@ -149,10 +149,7 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+<img width="1234" alt="Screen Shot 2022-12-14 at 10 48 32 PM" src="https://user-images.githubusercontent.com/117226930/207792687-89889111-bcb7-47d4-8ba1-3db6e392e733.png">
 
 #### Things to keep in mind
 
