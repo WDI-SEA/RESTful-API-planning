@@ -153,7 +153,7 @@ You can use this markdown chart:
 | -------------------- | ------------- | ---- | -------- | ----- |
 |                      |               |      |          |       |
 |                      |               |      |          |       |
-
+![chart img](156805a03d71481eaf160f42dd226819-0001.jpg)
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
