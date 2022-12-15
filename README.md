@@ -154,6 +154,10 @@ You can use this markdown chart:
 |                      |               |      |          |       |
 |                      |               |      |          |       |
 
+![API books](./imgs/api_books.png)
+![API genre](./imgs/api_genre.png)
+![API members](./imgs/api_members.png)
+
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
