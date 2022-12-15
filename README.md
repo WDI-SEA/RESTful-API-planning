@@ -149,11 +149,13 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
-
+| HTTP METHOD (_Verb_) | URL (_Nouns_)          |  CRUD   |          Response          |              Notes                |
+| -------------------- | ---------------------- | ------- | -------------------------- | --------------------------------- |
+|         Get          |  /members              | READ    | Array of members           | Authenticate user                 |
+|         Get          |  /members/:member_id   | READ    | Single user                | Sounds details of user or account |
+|         Post         |  /members              | Create  | No Data, New user          | get data or new data              |
+|         Put/Patch    |  /members/:member_id   | Update  | No data. or updated user   | Show update of account            |
+|         Delete       |  /members/:member_id   | Destroy | Send back error or no data | delete, send back data, or error  |   
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
