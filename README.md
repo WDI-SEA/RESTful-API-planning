@@ -151,8 +151,23 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET                  | /members/:member_id  | READ | specific member info  | allows you to check a member's account details (currently checked out books, estimated return dates))      |
+| POST                     |  /members             |  CREATE    |  no data, or new member data (new member_id)        | redirect GET members/member_id      |
+| PUT/PATCH                     |  members/:member_id             |  UPDATE    |  updated member data        |  new member data     |
+| DELETE            | /members/:member_id            | DESTROY      |  no data        | no data      |
+| GET                     |  /books             | READ     |  Array of all books        |  See all books     |
+| POST                     | /books              | CREATE     |  new book_id or no response        | redirect to GET /book/:book_id      |
+| PUT/PATCH                     |  /books/:book_id             | UPDATE     | Update a book's data         | redirect to GET /books/:book_id      |
+| GET                     |   /books/:book_id            |  READ    |  Specific book data        |  specific book data and details     |
+| DELETE                     |   /books/:book_id            | DESTROY     |  no data        |  redirect to GET /books     |
+| GET                     |   /genres            | READ     |  Array of all genres        |  see all genres      |
+| POST                     |  /genres             | CREATE     | new genre details/id or no response        |  new genre data (redirect to GET /genre/genre_id)     |
+| PUT/PATCH                     |  /genres/:genre_id             | UPDATE     |  updated genre data        | redirect GET /genre/genre_id      |
+| DELETE                     |   /genres/:genre_id            | DESTROY     |   no data       |  redorect to GET /genre     |
+| GET                     |   /books/:genre_id            | READ    |  Array of books in specific genre        |  allows user to find books that are categorized as a specific genre     |
+| GET                     |  /genres/:book_id             | READ     |  Array of genres of a specific book        |  allows user to find the genre list of a specific book     |
+|  GET                    |   /books/:book_id/0            |  READ    |  returns status that book is not checked out. Gives book location        |  brings user book location after notifying its available for checkout     |
+| GET                     |   /books/:book_id/1/            | READ     |  returns status that book is checked out. gives return date. Gives member_id of the person who checked it out        | tells user it is checked out and provides member_id to see when the return date is      |
 
 #### Things to keep in mind
 
