@@ -149,10 +149,31 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| CONTROLLER   |              | MODEL       | VIEW                                                 | Notes                                     |
+|--------------|--------------|-------------|------------------------------------------------------|-------------------------------------------|
+| HTTP Request | URL Path     | CRUD action | HTTP Response                                        |                                           |
+| GET          | /books       | READ        | Array of Objects<br/>[{ books }]<br/>Status: 200     | List all books                            |
+| POST         |              | CREATE      | No data<br/>Status: 201<br/>Redirect to /books/:id   | Post to books table                       |
+| GET          | /books/:id   | READ        | Single Object<br/>{ books }<br/>Status:200           | single book detail page                   |
+| PUT/PATCH    |              | UPDATE      | No data<br/>Status: 204<br/>Redirect to /books/:id   | update book record by id                  |
+| DELETE       |              | DESTROY     | No data<br/>Status: NONE<br/>Redirect to /books      | delete book record by id                  |
+|              |              |             |                                                      |                                           |
+|              |              |             |                                                      |                                           |
+| CONTROLLER   |              | MODEL       | VIEW                                                 | Notes                                     |
+| HTTP Request | URL Path     | CRUD action | HTTP Response                                        |                                           |
+| GET          | /members     | READ        | Array of Objects<br/>[{ members }]<br/>Status: 200   | List all members                          |
+| POST         |              | CREATE      | No data<br/>Status: 201<br/>Redirect to /members/:id | Create new member in member table         |
+| GET          | /members/:id | READ        | Single Object<br/>{ members }<br/>Status:200         | get single member detail page             |
+| PUT/PATCH    |              | UPDATE      | No data<br/>Status: 204<br/>Redirect to /members/:id | update member by id                       |
+| DELETE       |              | DESTROY     | No data<br/>Status: NONE<br/>Redirect to /members    | delete member by id                       |
+|              |              |             |                                                      |                                           |
+| CONTROLLER   |              | MODEL       | VIEW                                                 | Notes                                     |
+| HTTP Request | URL Path     | CRUD action | HTTP Response                                        |                                           |
+| GET          | /genres      | READ        | Array of Objects<br/>[{ genres }]<br/>Status: 200    | Get all genres                            |
+| POST         |              | CREATE      | No data<br/>Status: 201<br/>Redirect to /genres/:id  | Create new genre in genres table          |
+| GET          | /genres/:id  | READ        | Single Object<br/>{ genres }<br/>Status:200          | Get single genre detail page              |
+| PUT/PATCH    |              | UPDATE      | No data<br/>Status: 204<br/>Redirect to /genres/:id  | Update genre in genre table based on id   |
+| DELETE       |              | DESTROY     | No data<br/>Status: NONE<br/>Redirect to /genres     | Delete genre from genre table based on id |
 
 #### Things to keep in mind
 
@@ -169,3 +190,4 @@ You can use this markdown chart:
 ## Licensing
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+![[./rest_deliverable.pdf]]
