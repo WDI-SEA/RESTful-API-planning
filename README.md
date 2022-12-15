@@ -149,10 +149,12 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+![Members] (/Users/emilyryan/seir-1114/unit2/deliverables/RESTful-API-planning/imgs/members.png)
+
+![Books] (/Users/emilyryan/seir-1114/unit2/deliverables/RESTful-API-planning/imgs/books.png)
+
+![Genres] (/Users/emilyryan/seir-1114/unit2/deliverables/RESTful-API-planning/imgs/genres.png)
+
 
 #### Things to keep in mind
 
