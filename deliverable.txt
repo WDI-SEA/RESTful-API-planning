@@ -1,0 +1,17 @@
+| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
+| -------------------- | ------------- | ---- | -------- | ----- |
+|      Get                |   '/members'            |  Read    |  array of members {members}       |  allows user to find other members     |
+|      Get                |       '/members/member_id        |  Read    |   single member {member}       |  allows to see single member     |
+|       Post               |     '/members'          |  Create    |    no data or new member {member}     |  add info to member database     |
+|        Put/Patch              |    '/members/member_id          |  Update    |  no data or updated [member]        |  send updated info to member data    |
+|         Delete             |      '/members/member_id           |  Delete    |    no data      |  erases member, gives no data      |
+|      Get                |   '/books'            |  Read    |  array of books {books}       |  allows user to see all books   |
+|      Get                |       '/books/book_id        |  Read    |   single book {book}       |  allows to see specific book    |
+|       Post               |     '/books'          |  Create    |    no data or new book {book}     |  add info of a new book    |
+|        Put/Patch              |    '/books/book_id          |  Update    |  no data or updated {book}        |  send updated info about book   |
+|         Delete             |      '/books/book_id           |  Delete    |    no data      |  erases book, gives no data      |
+|      Get                |   '/genres'            |  Read    |  array of genres {genres}       |  allows user to see all genres     |
+|      Get                |       '/genres/genre_id        |  Read    |   single genre {genre}       |  allows to see single genre     |
+|       Post               |     '/genres'          |  Create    |    no data or new genre {genre}     |  add info to genres database     |
+|        Put/Patch              |    '/genres/genre_id          |  Update    |  no data or updated [genre]        |  send updated info to genre data    |
+|         Delete             |      '/genres/genre_id           |  Delete    |    no data      |  erases genre, gives no data      |
