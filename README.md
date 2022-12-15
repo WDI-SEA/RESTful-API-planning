@@ -155,6 +155,7 @@ You can use this markdown chart:
 
 ![Genres] (./imgs/genres.png)
 
+If images don't render, see img folder with 3 png files for answers
 
 #### Things to keep in mind
 
