@@ -164,8 +164,4 @@ You can use this markdown chart:
 	* as a user, I would like to see all the books a particular genre has is in it.
 * You will need routes to handle adding a book to a genre and vice-versa
 
----
 
-## Licensing
-1. All content is licensed under a CC-BY-NC-SA 4.0 license.
-2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
