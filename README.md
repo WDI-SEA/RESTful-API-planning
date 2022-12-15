@@ -149,10 +149,33 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)     | CRUD    | Response                             | Notes                                                                                                                    |
+| -------------------- | ----------------- | ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| GET                  | `/members`          | READ    | Array of members `{ [ member, member ] }`  | allows a member to find other members                                                                                        |
+| GET                  | `/members/:member_id` | READ    | Single member `{ member }`               | details view of a single member (aka `/members/1234`) akin to a 'member profile' which includes a list of currently checked out books                                               |
+| POST                 | `/members`          | CREATE  | No Data, or new member `{ member }`      | can send back a status `204` (no content), a redirect to where to find data (GET `/members/:member_id`) or just the new member data |
+| PUT/PATCH            | `/members/:member_id` | UPDATE  | No data, or updated member `{ member }`  | can send back a status `204` (no content), a redirect to where to find data (GET `/members/:member_id`) or just the new member data |
+| DELETE               | `/members/:member_id` | DESTROY | No data                              | can send back a status `204` (no content), a redirect to where to find data (GET `/members`)                               |
+
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)           | CRUD    | Response                                | Notes                                                                                                                         |
+| -------------------- | ----------------------- | ------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| GET                  | `/books`                | READ    | Array of all books `{ [ book, book ] }` | allows a member to see all books                                                                                              |
+| GET                  | `/books/:book_id`       | READ    | Single book details `{ book }`          | detailed view of a single book (aka `/book/1234`) includes the books genres and whether it is currently checked out or not              |
+| POST                 | `/books`                | CREATE  | No Data, or new book `{ book }`         | can send back a status `204` (no content), a redirect to where to find data (GET `/books/:book_id`) or just the new book data  |
+| PUT/PATCH            | `/books/:book_id`       | UPDATE  | No data, or updated book `{ book }`     | can send back a status `204` (no content), a redirect to where to find data (GET `/books/:book_id`) or just the new book data. This URL would handle adding or removing genres from a book as you'll be changing the information related to a singular book |
+| PUT/PATCH            | `/books/:book_id/members/:member_id`       | UPDATE  | No data, or updated book `{ book }`     | can send back a status `204` (no content), a redirect to where to find data (GET `/books/:book_id`) or just the new book data. This URL would handle book checkouts and returns |
+| DELETE               | `/books/:book_id`       | DESTROY | No data                                 | can send back a status `204` (no content), a redirect to where to find data (GET `/books`)                                    |
+
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_)           | CRUD    | Response                                | Notes                                                                                                                         |
+| -------------------- | ----------------------- | ------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| GET                  | `/genres`                | READ    | Array of all genres `{ [ genre, genre ] }` | allows a member to see all genres                                                                                              |
+| GET                  | `/genres/:genre_id`       | READ    | Single genre details `{ genre }`          | detailed view of a single genre (aka `/genre/1234`) which includes a description of the genre and a list of books in that genre     |
+| POST                 | `/genres`                | CREATE  | No Data, or new genre `{ genre }`         | can send back a status `204` (no content), a redirect to where to find data (GET `/genres/:genre_id`) or just the new genre data  |
+| PUT/PATCH            | `/genres/:genre_id`       | UPDATE  | No data, or updated genre `{ genre }`     | can send back a status `204` (no content), a redirect to where to find data (GET `/genres/:genre_id`) or just the new genre data |
+| DELETE               | `/genres/:genre_id`       | DESTROY | No data                                 | can send back a status `204` (no content), a redirect to where to find data (GET `/genres`)                                    |
+
 
 #### Things to keep in mind
 
