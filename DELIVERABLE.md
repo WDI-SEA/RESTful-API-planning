@@ -1,0 +1,3 @@
+# ![Miro-Board-Img-1](file://wsl%24/Ubuntu/home/getfluxxed/seir-1114/unit2/RESTful-API-planning/imgs/MiroBoard-IMG%201.png "First Portion")
+# ![Miro-Board-Img-2](file://wsl%24/Ubuntu/home/getfluxxed/seir-1114/unit2/RESTful-API-planning/imgs/MiroBoard-IMG%202.png "Second Portion")
+# I could not stand using markdown for this, so when Gabe made his miro board, I transfered all of my info into that and broke it into MUCH easier to read images than what I had in the previous read.md. Hopefully this is acceptable.
