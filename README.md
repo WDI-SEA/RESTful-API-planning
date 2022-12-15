@@ -120,8 +120,7 @@ When `READ`ing, `UPDATING` or `DELETING`, the user who created the comment, and 
     
 Here is our `RESTful` routing chart for CRUD on our comment model:
     
-| HTTP METHOD (_Verb_) | URL (_Nouns_)                            | CRUD    | Response                                  | Notes                                                                                                                           |
-| -------------------- | ---------------------------------------- | ------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD    | Response | Notes                                                                                                          |   | -------------------- | ---------------------------------------- | ------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | POST                 | `/users/:user_id/blog/:blog_id/comments` | CREATE  | No Data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs/:_id`) or just the new comment data    |
 | PUT/PATCH            | `/comments/:comments_id`                 | UPDATE  | No data, or updated comment `{ comment }` | can send back a status `204` (no content), a redirect to where to find data (GET `/blog/:blog_id`) or just the new comment data |
 | DELETE               | `/comments/:comments_id`                 | DESTROY | No data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/blogs`)                                      |
@@ -151,8 +150,19 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
+|        GET    |   /members    | READ |     array of members { [user, user]}     | allows library to find members   |
+|       GET         |    /member/:memberid       |  READ    |   details of single user{name:, address:, email:, active library card:, fines: , checkout history: }       |       |
+|        POST        |       /members        |   CREATE   |   No data. new user     | send back new user data, redirect to members page  |
+|       PUT/PATCH         |      /members/:memberid         |   UPDATE   |   updated user data    |  can send back a status 204 (no content), a redirect to where to find data (GET /users/:user_id) or just the new user data     |
+|         DELETE        |       /members/:memberid        |  DESTROY    |    No data    |   send back 204. 404. or redirect to members page    |
+|          GET            |      /books/:booksid         |  READ    |    array of objects of books {{title:, genre:, author: , checkedOut:}}      |   allows library to find a profile page of the book and information    |
+|         GET            |      /books        |   READ   |  array of all books      |   Full searchable list of all books    |
+|          POST        |      /books:booksid       |  CREATE    |   No data, new book     |  Creates new book, sends back new book data or redirect to where to find data   |
+|         PUT/PATCH         |     /books/:booksid          |  UPDATE    |    object with updated book information, checked out y/n, array of genres    |       |
+|          DELETE            |      /books/:booksid         |   DESTROY   |    No data     |   redirect to books page   |
 |                      |               |      |          |       |
 |                      |               |      |          |       |
+
 
 #### Things to keep in mind
 
