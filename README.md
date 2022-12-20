@@ -151,7 +151,7 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
+|        |       |        |       |
 |                      |               |      |          |       |
 
 #### Things to keep in mind
@@ -169,3 +169,8 @@ You can use this markdown chart:
 ## Licensing
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+
+
+## MARIA's routes link
+* I used the tool Gabe showed us (miro)
+https://miro.com/app/board/uXjVP5ZcBNc=/?share_link_id=790763302801
