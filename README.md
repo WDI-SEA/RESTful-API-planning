@@ -147,7 +147,9 @@ Now it is time for you to plan a `RESTful API` of your own. Take a look at this 
 
 Your Task is to write a `RESTful` routing chart for the library system's API. Your API will need to serve full CRUD on `members`, `books`, and `genres`. Do not worry about authentication, another team is handling that. 
 
-![](images/API-PLANNIG.jpg)
+
+![Alt text](../../../Desktop/API-PLANNING.jpg)
+
 
 #### Things to keep in mind
 
