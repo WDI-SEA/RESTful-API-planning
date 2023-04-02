@@ -164,7 +164,15 @@ You can use this markdown chart:
 	* as a user, I would like to see all the books a particular genre has is in it.
 * You will need routes to handle adding a book to a genre and vice-versa
 
+--- ANDREW'S DELIVERABLE
+![PDF](./Planning-a-REST-API-book-checkout-system.pdf)
+
+
+
+
 ---
+
+
 
 ## Licensing
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
