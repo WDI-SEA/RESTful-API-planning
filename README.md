@@ -155,7 +155,7 @@ You can use this markdown chart:
 |          GET         | /members/:id  |   R  |a single member @:id|       |
 |          POST        | /members      |   C   |redirect to /members/:newMemberId|
 |          PUT/PATCH   | /members/:id  |   U   | redirect to /members/:id|
-|          DELETE      | /members/:id  |   D   | redirect to /members|
+|          DELETE      | /members/:id  |   D   | redirect to /members| respond w 204 (no content)
 
 #### Things to keep in mind
 
