@@ -169,3 +169,30 @@ You can use this markdown chart:
 ## Licensing
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+
+
+
+
+
+| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
+| -------------------- | ------------- | ---- | -------- | ----- |
+|              GET        |         /members/id  |  READ    |    a single member            |       |
+|              POST       |         /members     |  CREATE  |    redirect to /members/:newMemberId  |       |
+|              PUT/PATCH  |         /members/id  |  UPDATE  |    redirect to /members/:id   |       |
+|              DELETE     |        /members/id   |  DESTROY |    redirect to /members       |       |
+books
+|              GET        |         /books  |  READ    |    array of books          |       |
+|              POST        |         /books  |  CREATE    |    redirect to /book/:newBookId            |       |
+|              GET       |         /books/:id     |  READ  |    a single book (details) @ :id  |       |
+|              PUT/PATCH  |         /books/:id  |  UPDATE  |    redirect to /books/:id   |       |
+|              DELETE     |        /books/:id   |  DESTROY |    respond w 204 (no content)       |       |
+genres
+|              GET        |         /genres  |  READ    |    array of genres          |       |
+|              POST        |         /genres  |  CREATE    |    redirect to /book/:newGenreId            |       |
+|              GET       |         /genres/:id     |  READ  |    a single genre (details) @ :id  |       |
+|              PUT/PATCH  |         /genres/:id  |  UPDATE  |    redirect to /genres/:id   |       |
+|              DELETE     |        /genres/:id   |  DESTROY |    respond w 204 (no content)       |       |
+members books routes
+| PUT/PATCH | /users/:user_id/books/:book_id | UPDATE  | redirect /members/:id | request body/query to say if the book is being checked out or returned |
+| DELETE | /users/:user_id/books/:book_id | CREATE (relationship)  | redirect /members/:id | return a book |
+| POST | /users/:user_id/books/:book_id | DESTROY (relationship)  | redirect /members/:id | check out a book |
