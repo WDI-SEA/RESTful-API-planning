@@ -151,8 +151,20 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET | /books | READ | Array of books | Allows a user to find books |
+| GET | /books/:id | READ | Single book | See details of a particular book including genres  |
+| PUT | /books/:id | UPDATE | No data | Update genres/information of the book |
+| POST | /books | CREATE | redirect to /books/:newBookID | create a new book |
+| DELETE | /books/:id | DESTROY | redirect to /books | Delete a book |
+| GET | /members | READ | All members | See all users |
+| GET | /members/:id | READ | User information | See user details including which books are checked out to user |
+| POST | /members/ | CREATE | redirect to /members/:newMemberID | Create new user |
+| PUT | /members/:id | UPDATE | No data | Allows users to return books/update information |
+| DELETE | /members/:id | DESTROY | redirect to /members | remove a particular member |
+| GET | /genres | READ | List of genres | Shows available genres |
+| GET | /genres/:id | READ | Shows books in a particulare genre | Shows books that belong to a particular genre |
+| PUT | genres/:id | UPDATE | No data | Updates genre information |-
+
 
 #### Things to keep in mind
 
