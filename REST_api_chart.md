@@ -11,7 +11,7 @@
 | GET |	/books/:id |	READ |	Find a book by its id |	200 OK: Retrieve a specific book by its ID / 404 Not Found 
 | PUT |	/books/:id |	UPDATE |	Find a book by its id and update it |	200 OK: Update a specific book by its ID / 400 Bad Request
 | DELETE |	/books/:id |	DELETE |	Find a book by the id and delete it |	204 No Content: Delete a specific book by its ID /400 Bad Request
-| PUT |	/books/:id/checkout/:memberId |	UPDATE	Check out a specific book to a specific member |	200 OK: Check out a book to a specific member by their ID / 400 Bad Request
+| PUT |	/books/:id/checkout/:memberId |	UPDATE |	Check out a specific book to a specific member |	200 OK: Check out a book to a specific member by their ID / 400 Bad Request
 | PUT |	/books/:id/checkin |	UPDATE |	Check a book back in |	200 OK: Check in a book / 400 Bad Request
 | GET |	/books/:id/genres |	READ |	Find the list of genre of a book |	200 OK: Retrieve a list of genres associated with a specific book / 404 Not Found
 | GET |	/genres	| READ |	Finds a list of genres	 | 200 OK: Associate a genre with a specific book / 404 Not Found
