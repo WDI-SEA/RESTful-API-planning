@@ -149,10 +149,29 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD  | Response | Notes |
+| -------------------- | ------------- | ----  | -------- | ----- |
+|          GET         | /members      |   R   | all members|       |
+|          GET         | /members/:id  |   R   |a single member @:id|       |
+|          POST        | /members      |   C   |redirect to /members/:newMemberId|
+|          PUT/PATCH   | /members/:id  |   U   | redirect to /members/:id|
+|          DELETE      | /members/:id  |   D   | redirect to /members| respond w 204 (no content)
+          //  BOOKS MODEL 
+|          GET         | /books      |   R   | array of books|       |
+|          GET         | /books/:id  |   R   |a single book (details) @:id |       |
+|          POST        | /books      |   C   |redirect to /books/:newBookId|
+|          PUT/PATCH   | /books/:id  |   U   | redirect to /books/:id|
+|          DELETE      | /books/:id  |   D   | redirect to /books| respond w 204 (no content)
+          //  GENRES MODEL 
+|          GET         | /genres      |   R   | array of genres|       |
+|          GET         | /genres/:id  |   R   |a single genre  |       |
+|          POST        | /genres      |   C   |redirect to /genres/:newGenreId|
+|          PUT/PATCH   | /genres/:id  |   U   | redirect to /genres/:id|
+|          DELETE      | /genres/:id  |   D   | redirect to /genres| respond w 204 (no content)
+          // MEMBERS BOOK ROUTES
+|         POST         | /members/:member_id/books/:book_id| CREATE (relationship) | redirect /members/:id | check out a book
+|         PUT /PATCH   | /members/:member_id/books/:book_id| UPDATE | redirect /members/:id | request body/query string
+|         DELETE       | /members/:member_id/books/:book_id| DESTROY (relationship) | redirect /members/:id | return a book
 
 #### Things to keep in mind
 
