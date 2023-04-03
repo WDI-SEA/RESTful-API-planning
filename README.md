@@ -151,8 +151,11 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+|          GET         | /members      |   R  | all members|       |
+|          GET         | /members/:id  |   R  |a single member @:id|       |
+|          POST        | /members      |   C   |redirect to /members/:newMemberId|
+|          PUT/PATCH   | /members/:id  |   U   | redirect to /members/:id|
+|          DELETE      | /members/:id  |   D   | redirect to /members|
 
 #### Things to keep in mind
 
