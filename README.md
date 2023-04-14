@@ -149,10 +149,28 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP(_Verb_) | URL (_Nouns_)       | CRUD    | Response                                        | Notes                                                                  |
+| ------------ | ------------------- | ------- | ----------------------------------------------- | ---------------------------------------------------------------------- |
+| GET       | /members               | READ    | array of members                                | show all members                                                       |
+| GET       | /members/:id           | READ    | specific member                                 | show specific member info                                              |
+| POST      | /members               | CREATE  | new member                                      | create new member                                                      |
+| PUT/PATCH | /members/:id           | UPDATE  | updated member                                  | update specific member                                                 |
+| DELETE    | /members/:id           | DESTROY | n/a, redirect to home                           | delete specific member                                                 |
+| GET       | /books                 | READ    | array of books                                  | show all books                                                         |
+| GET       | /books/:id             | READ    | specific book                                   | show details of a specific book                                        |
+| POST      | /books                 | CREATE  | new book                                        | create a new book                                                      |
+| PUT/PATCH | /books/:id             | UPDATE  | updated book                                    | update a specific book                                                 |
+| DELETE    | /books/:id             | DESTROY | none, redirect to books home                    | delete a specific book                                                 |
+| GET       | /books/:id/genres      | READ    | array of genres                                 | show all genres associated with a specific book                        |
+| GET       | /genres                | READ    | array of genres                                 | show all genres                                                        |
+| GET       | /genres/:id            | READ    | single genre                                    | show details of a specific genre                                       |
+| POST      | /genres                | CREATE  | new genre                                       | create a new genre                                                     |
+| PUT/PATCH | /genres/:id            | UPDATE  | updated genre                                   | update a specific genre                                                |
+| DELETE    | /genres/:id            | DESTROY | no data, redirect to genre home                 | delete a specific genre                                                |
+| GET       | /genres/:id/books      | READ    | array of books                                  | show all books associated with a specific genre                        |
+| GET       | /members/:id/books     | READ    | array of books                                  | show all books checked out by a specific member                        |
+| POST      | /members/:id/books     | CREATE  | new book-member relationship                    | add a book to the checked out list of a specific member                |
+| DELETE    | /members/:id/books/:id | DESTROY | no data, redirect to specific member's booklist | remove a book from the checked out list of a specific member           |
 
 #### Things to keep in mind
 
