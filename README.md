@@ -149,10 +149,26 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)         | CRUD    | Response       | Notes |
+| -------------------- | --------------------- | ------- | -------------- | ----- |
+| GET                  | `/members`                           | READ    | Array of members `{ [ member, member ] }` | This route might be superfluous -- nothing in the description makes clear a use case for members to look up other members           |
+| GET                  | `/members/:member_id`                | READ    | Single member `{ member }`                | details view of a single member (aka /members/1234);  akin to a 'user profile'                                                      |
+| POST                 | `/members`                           | CREATE  | New member `{ member }`                   | can send back a status `204` (no content), a redirect to where to find data (GET `/members/:member_id`) or just the new member data |
+| PUT/PATCH            | `/members/:member_id`                | UPDATE  | Updated member `{ member }`               | can send back a status `204` (no content), a redirect to where to find data (GET `/members/:member_id`) or just the new member data |
+| DELETE               | `/members/:member_id`                | DESTROY | No data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/members/`) |
+| GET                  | `/books`                             | READ    | Array of books  `{ [ book, book ] }`      | allows a user to see all books |
+| GET                  | `/books/:book_id`                    | READ    | Single book `{ book }`                    | details view of a single book  |
+| GET                  | `/books/:book_id/genres`             | READ    | Array of genres `{ [ genre, genre ] }`    | I think this is superfluous -- could get this information on the details view of the single book.  But maybe this is more semantic/intuitive? |
+| POST                 | `/books`                             | CREATE  | New book  `{ book }`                      | can send back a status `204` (no content), a redirect to where to find data (GET `/books/:book_id`) or just the new book data |
+| PUT/PATCH            | `/books/:book_id`                    | UPDATE  | Updated book `{ book }`                   | can send back a status `204` (no content), a redirect to where to find data (GET `/books/:book_id`) or just the new book data (this is the route for adding a specific genre to a specific book) |
+| PUT/PATCH            | `/members/:member_id/books/:book_id` | UPDATE  | Updated book `{ book }`                   | checkout route for a member to 'update' a book as checked out or checked back in |
+| DELETE               | `/books/:book_id`                    | DESTROY | No data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/books/`) |
+| GET                  | `/genres`                            | READ    | Array of genres `{ [ genre, genre ] }`    | list of genres where a user can select one to be routed to the details page for the genre |
+| GET                  | `/genres/:genre_id`                  | READ    | Single genre `{ [ genre, genre ] }`       | allow a user to see all books that are classified as having a specific `genre_id` |
+| POST                 | `/genres`                            | CREATE  | New genre `{ genre }`                     | can send back a status `204` (no content), a redirect to where to find data (GET `/genres/:genre_id`) or just the new genre data |
+| PUT/PATCH            | `/genres/:genre_id`                  | UPDATE  | Updated genre `{ genre }`                 | can send back a status `204` (no content), a redirect to where to find data (GET `/genres/:genre_id`) or just the new genre data |
+| PUT/PATCH            | `/genres/:genre_id/books/:book_id`   | UPDATE  | Updated genre `{ genre }`                 | route for adding a specific book to a specific genre |
+| DELETE               | `/genres/:genre_id`                  | DESTROY | No data                                   | can send back a status `204` (no content), a redirect to where to find data (GET `/genres/`) |
 
 #### Things to keep in mind
 
