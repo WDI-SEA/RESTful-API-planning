@@ -1,0 +1,28 @@
+RESTful- API- PLanning 
+
+Members: Book 1:Many
+| HTTP METHOD | URL                | CRUD    | RESPONSE                     | NOTES                           |
+|:----------- |:------------------ |:------- |:---------------------------- |:------------------------------- |
+| POST        | /members           | CREAE   | No Data/New Uswer            | 204, New Mem Data, (redirect)   |
+| GET         | /members           | READ    | Show array of members        | 204, search for members         |
+| POST        | /member/:memberId  | CREATE  | Add check out books          | checkout data                   |
+| PUT/PATCH   | /member/memberId   | UPDATE  | No Data or checked out books | 204, redirect                   |
+| DELETE      | /members/:memberID | DESTROY | No Data  or books returned   | 204, redirect where to get data |
+
+BOOKS: GENRES N:M- relationship
+
+| HTTP METHOD | URL             | CRUD   | RESPONSE                    | NOTES                           |
+| ----------- |:--------------- |:------ |:--------------------------- |:------------------------------- |
+| GET         | /books          | READ   | Array of books              | 204, book data                  |
+| POST        | /books/:booksId | CREATE | forming new book data       | 204, new book data confirmation |
+| GET         | /books/:booksId | READ   | Book Data                   | 204, Info onn the single book   |
+| GET         | /Genres         | READ   | Array of genres             |                                 |
+| GET         | /genre/books    | READ   | show book in specific genre |                                 |
+| PUT         | /:bookId/genre  | UPDATE | Add a book to a genre       |                                 |
+| POST        | /genres         | CREATE | add a new genre form        |                                 |
+|             |                 |        |                             |                                 |
+
+
+
+
+
