@@ -151,8 +151,18 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| GET | `/genres` | Read (index) | Array of genres `{ [ genre, genre ] }` | retrieves the index list of all genres |
+| GET | `/books` | Read (index) | Array of books `{ [ book, book ] }` | retrieves the index list of all books |                                           |
+| GET | `/members` | Read (index) | Array of members `{ [ member, member ] }` | retrieves the index list of all members |
+| GET | `/genres/:id` | READ (show) | Genre details | shows a specific genre's details |
+| GET | `/books/:id` | READ (show) | Book details | shows a specific book's details |
+| GET | `/members/:id` | READ (show) | Member details | shows a specific member's details |
+| PUT | `/books/:id/members/:id` | Update | Checkout Book | shows specific book checked-out by a specific member |
+| DELETE | `/books/:id` | DELETE | Return Book | shows specific book is returned |
+| GET | `/genres/:id/books` | READ (index) | Books in Genre | retrieves the index list of all books of a specific genre |
+| GET | `/books/:id/genres` | READ (index) | Genres of Book | retrieves the index list of all genres of a specific book |
+| POST | `/books/:id/genres` | Create | Add Genre to Book | adds a genre to a specific book |
+| DELETE | `/books/:id/genres` | Delete | Remove Genre from Book | removes genre from a specific book |
 
 #### Things to keep in mind
 
