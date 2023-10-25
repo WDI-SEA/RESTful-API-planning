@@ -151,8 +151,32 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| `full index of items`  |   |   |   |   |
+| GET | `/genres` | Read (index) | Array of genres `{ [ genre, genre ] }` | retrieves the index list of all genres |
+| GET | `/books` | Read (index) | Array of books `{ [ book, book ] }` | retrieves the index list of all books |
+| GET | `/members` | Read (index) | Array of members `{ [ member, member ] }` | retrieves the index list of all members |
+| GET | `/genres/:genreId/books` | Read (index) | Books in Genre | retrieves the index list of all books of a specific genre |
+| GET | `/books/:bookId/genres` | Read (index) | Genres of Book | retrieves the index list of all genres of a specific book |
+| `individual items`  |   |   |   |   |
+| GET | `/genres/:genreId` | Read (show) | Genre details | shows a specific genre's details |
+| GET | `/books/:bookId` | Read (show) | Book details | shows a specific book's details |
+| GET | `/members/:memberId` | Read (show) | Member details | shows a specific member's details |
+| `adding items to index`  |   |   |   |   |
+| POST | `/books` | Create | Add a book | add a book to database |
+| POST | `/genres` | Create | Add a genre | add a genre to database|
+| POST | `/members` | Create | Add a member | add a member to database |
+| `removing items from index`  |   |   |   |   |
+| DELETE | `/books` | Destroy | Delete a book | remove a book from database |
+| DELETE | `/genres` | Destroy | Delete a genre | remove a genre from database |
+| DELETE | `/members` | Destroy | Delete a member | remove a member from database |
+| `updating items in index`  |   |   |   |   |
+| PUT | `/genres/:genreId` | Update | Update Genre | update a specific genre's details |
+| PUT | `/books/:bookId` | Update | Update Book | update a specific book's details |
+| PUT | `/members/:memberId` | Update | Update Member | update a specific member's details |
+| PUT | `/books/:bookId/members/:memberId` | Update | Checkout Book | shows specific book checked-out by a specific member |
+| PUT | `/members/:memberId/books/:bookId` | Update | Return Book | shows specific book checked-in by a specific member |
+| POST | `/books/:bookId/genres` | Create | Add Genre to Book | adds a genre to a specific book |
+| DELETE | `/books/:bookId/genres` | Destroy | Remove Genre from Book | removes genre from a specific book |
 
 #### Things to keep in mind
 
