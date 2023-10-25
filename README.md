@@ -153,7 +153,7 @@ You can use this markdown chart:
 | -------------------- | ------------- | ---- | -------- | ----- |
 |                      |               |      |          |       |
 |                      |               |      |          |       |
-
+my submission: https://docs.google.com/document/d/1ejglbe2_LZiCq__l1ylG0Zp9c0ob8dS7MmG0eTf3LT0/edit 
 #### Things to keep in mind
 
 * A `book` can exist in the database without a member creating it, unlike our blog example. How will this affect the API's endpoints (_URLs_)?
