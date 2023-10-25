@@ -153,6 +153,11 @@ You can use this markdown chart:
 | -------------------- | ------------- | ---- | -------- | ----- |
 |                      |               |      |          |       |
 |                      |               |      |          |       |
+| GET | `/books` | READ | Array of books `{ [ book, book ] }` | Send status of `200` when all books display |
+| GET | `/books/:id/genre` | READ | Genres of a single `book` |  |
+| GET | `/books/:id/users` | READ | Array of users `{ [ user, user ] }` | |
+
+
 
 #### Things to keep in mind
 
