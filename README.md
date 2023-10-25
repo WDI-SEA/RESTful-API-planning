@@ -151,11 +151,21 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
-| GET | `/books` | READ | Array of books `{ [ book, book ] }` | Send status of `200` when all books display |
-| GET | `/books/:id/genre` | READ | Genres of a single `book` |  |
-| GET | `/books/:id/users` | READ | Array of users `{ [ user, user ] }` | |
+| GET | `/books` | READ | Array of books `{ [ book, book ] }` |  |
+| POST | `/books` | CREATE | No data or the new { book } | Redirect to `/books` after adding book to library or go to `/books/:id` |
+| GET | `/books/:id` | READ | Single  `{ book }` | |
+| DELETE | `/books/:id` | DELETE | Delete `{ book }` | Redirect to `/books` |
+| GET | `/books/:id/genres` | READ | Page to edit the book's genres (form) |  |
+| POST | `/books/:id` | CREATE | Updated `{ book }` | Redirects to `/books/:id` |
+| GET | `/books/:id/users` | READ | Page to checkout the book (form) |  |
+| POST | `/books/:id/users` | CREATE | Updated `{ book }` | Redirects to `/books/:id` |
+| POST | `/user` | CREATE | New `{ user }` | Redirects to `/users/:id` |
+| GET | `/users/:id` | READ | Array of books belonging to user `{ [ book, book ]}` |
+| DELETE | `/users/:id` | DELETE | Delete `{ book }` from user's list (return book) | Redirects to `/users:id` |
+| GET | `/genres` | READ | Array of genres `{ [ genre, genre ] }` | Display list of all genres |
+| GET | `/genres/:id` | READ | Array of books { [ book, book ] } | Display books belonging to that genre |
+| GET | `/genres/:id/books` | READ | Page with form to add a book to the genre |  |
+| POST | `/genres/:id` | CREATE | Updated `{ genre }` | Redirects to `/genres/:id`
 
 
 
