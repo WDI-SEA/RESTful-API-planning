@@ -149,10 +149,39 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+```js
+member = {
+    name: string
+    id: ObjectId()
+    phoneNumber: string
+    email: string
+    isActive: Boolean (defaults to true)
+    fineAmount: Number
+    checkOutBooks: [ObjectIds(ref to a book)]
+}
+// 1:M members:books
+book = {
+    title: string
+    ...
+    checkedOutBy: ObjectId(ref to member who checked it out)
+}
+```
+| HTTP METHOD (_Verb_)   | URL (_Nouns_)                    | CRUD    | Response                                                                    | Notes |
+| ---------------------- | -------------------------------- | ------- | --------------------------------------------------------------------------- | ----- |
+| `members`              |                                  |         |                                                                             |       |
+| GET                    | /members                         | READ    | array of members                                                            |       |
+| GET                    | /members/:memberId               | READ    | single member with id of :memberId                                          |       |
+| POST                   | /members                         | CREATE  | add member to library                                                       |       |
+| PUT/PATCH              | /members/:memberId               | UPDATE  | update member with id of :memberId                                          |       |
+| DELETE                 | /members/:memberId               | DESTROY | destroy member with id of :memberId                                         |       |
+| PUT/PATCH (maybe post) | /members/:memberId/books/:bookId | UPDATE  | associate the member with id of :memberId to the book with an id of :bookId |       |
+| `books`                |                                  |         |                                                                             |       |
+| GET                    | /books                           | READ    | array of books                                                              |       |
+| GET                    | /books/:bookId                   | READ    | single book with id of :bookId                                              |       |
+| POST                   | /books                           | CREATE  | add book to library                                                         |       |
+| PUT/PATCH              | /books/:bookId                   | UPDATE  | update book with id of :bookId                                              |       |
+| DELETE                 | /books/:bookId                   | DESTROY | destroy book with id of :bookId                                             |       |
+| DELETE                 | /books/:bookId/members/:memberId  | UPDATE  | remove the book with an id of :bookId from the member with an id of :memberId |       |
 
 #### Things to keep in mind
 
