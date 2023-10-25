@@ -151,8 +151,27 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| `books` |  |  |  |  |
+| GET | `/books` | READ | Array of books `{ [ book, book ] }` |  |
+| POST | `/books` | CREATE | No data or the new `{ book }` | Redirect to `/books` after adding book to library or go to `/books/:id` |
+| GET | `/books/:id` | READ | Single  `{ book }` | |
+| DELETE | `/books/:id` | DELETE | Delete `{ book }` | Redirect to `/books` |
+| GET | `/books/:id/genres` | READ | Page to edit the book's genres (form) |  |
+| POST | `/books/:id` | CREATE | Updated `{ book }` | Redirects to `/books/:id` |
+| `members` |  |  |  |  |
+| GET | `/members` | READ | Array of `{ members }`
+| POST | `/members` | CREATE | New `{ members }` | Redirects to `/members/:id` |
+| GET | `/members/:id` | READ | Array of books belonging to member `{ [ book, book ]}` |
+| PUT | `/members/:id` | UPDATE | Update member
+| DELETE | `/members/:id` | DESTROY | Delete `{ member }` from members | Redirects to `/members:id` |
+| PUT | `/members/:id/books/:id` | UPDATE | Associate member with book; redirect to `/members/:id` |
+| `genres` |  |  |  |  |
+| GET | `/genres` | READ | Array of genres `{ [ genre, genre ] }` |  |
+| GET | `/genres/:id` | READ | Array of books `{ [ book, book ] }` |  |
+| GET | `/genres/:id/books` | READ | Page with form to add a book to the genre |  |
+| POST | `/genres` | CREATE | New `{ genre }` | Redirects to `/genres/:id` |
+
+
 
 #### Things to keep in mind
 
