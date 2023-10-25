@@ -64,6 +64,8 @@ The above could be described as a template for a `REST API's` endpoints that all
     * as a sub note, notice that this allows us to avoid url/route _anti-patterns_ such as redundancies like `POST /users/new` or `PATCH /users/:user_id/update` which communicates nothing extra by lengthening the url with useless information that is not related to the resource that is having an action taken on it.
 * when `POST`ing, `PUT`ing, `PATCH`ing, or `DELETE`ing there are different options on how to handle the response, the best choice being dependant on how your API needs to work
 
+
+
 ### Planning Blog Functionality
 
 Our API is off to a great start, lets talk about some of the other features we need to implement:
@@ -149,10 +151,42 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
+```
+member = {
+    name: string
+    id: ObjectId()
+    phoneNumber: string
+    email: string
+    isActive: Boolean (defaults to true)
+    fineAmount: Number
+    checkOutBooks: [ObjectIds(ref to a book)]
+}
+// 1:M members:books
+book = {
+    title: string
+    ...
+    checkedOutBy: ObjectId(ref to member who checked it out)
+}
+```
+
 | HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
 | -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| `members`            |               |      |          |       |
+| GET                     | /members              | READ     | array of members         |       |
+| GET                     | /members/:memberId              | READ     | single member with id of :memberId         |       |
+| POST                     | /members             | CREATE     | add member to library         |       |
+| PUT/PATCH                     | /members/:memberId              | UPDATE      | update member with id of :memberId         |       |
+| DELETE                     | 	/members/:memberId              | DESTROY     | destroy member with id of :memberId         |       |
+| PUT/PATCH (maybe post)   | /members/:memberId/books/:bookId              | UPDATE     | associate the member with id of :memberId to the book with an id of :bookId         |       |
+| `books`              |               |      |          |       |
+| GET                     | /books              | READ     | array of books         |       |
+| GET                     | /books/:bookId              | READ     | single book with id of :bookId         |       |
+| POST                     | /books              | CREATE     | 	add book to library         |       |
+| PUT/PATCH                     | /books/:bookId              | UPDATE     |  update book with id of :bookId        |       |
+| DELETE                     | /books/:bookId              | DESTROY     | 	destroy book with id of :bookId         |       |
+| DELETE                     | 	/books/:bookId/members/:memberId              | UPDATE     | remove the book with an id of :bookId from the member with an id of :memberId         |       |
+
+
 
 #### Things to keep in mind
 
