@@ -1,0 +1,20 @@
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                      | CRUD    | Response                                                                 | Notes                                               |
+| -------------------- | ---------------------------------- | ------- | ------------------------------------------------------------------------ | --------------------------------------------------- |
+| `members`            |                                    |         |                                                                          |                                                     |
+| GET                  | `/members`                         | READ    | Array of members                                                         |                                                     |
+| GET                  | `/members/:memberId`               | READ    | one member with id of :memberId                                          |                                                     |
+| POST                 | `/members`                         | CREATE  | add member to library                                                    |                                                     |
+| PUT/PATCH            | `/members/:memberId`               | UPDATE  | update member with id of :memberId                                       |                                                     |
+| DELETE               | `/members/:memberId`               | DESTROY | destroy member with id of :memberId                                      |                                                     |
+| PUT/PATCH            | `/members/:memberId/books/:bookId` | UPDATE  | connect/remove book with id of :bookId and member with id of :memberId   | set book's member value to memberId or set to empty |
+| `books`              |                                    |         |                                                                          |                                                     |
+| GET                  | `/books`                           | READ    | Array of books                                                           |                                                     |
+| GET                  | `/books/:bookId`                   | READ    | one book with id of :bookId                                              |                                                     |
+| POST                 | `/books`                           | CREATE  | add new book to library                                                  |                                                     |
+| PUT/PATCH            | `/books/:bookId`                   | UPDATE  | update book with id of :bookId                                           |                                                     |
+| DELETE               | `/books/:bookId`                   | DESTROY | destroy book with id of :bookId                                          |                                                     |
+| PUT/PATCH            | `/books/:bookId/:genreId`          | UPDATE  | connect/remove book with id of :bookId to a genre with an id of :genreId | add/remove genreId to/from book's genre array       |
+| `genres`             |                                    |         |                                                                          |                                                     |
+| GET                  | `/genres`                          | READ    | array of genres                                                          |                                                     |
+| POST                 | `/genres`                          | CREATE  | add new genre to array of genres                                         |                                                     |
+| DELETE               | `/genre/:genreId`                  | DESTROY | destroy genre from array of genres                                       |                                                     |
