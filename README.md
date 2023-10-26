@@ -151,8 +151,8 @@ You can use this markdown chart:
 
 | HTTP METHOD (_Verb_) | URL (_Nouns_)                    | CRUD | Response                               | Notes                         |
 | -------------------- | -------------                    | ---- | --------                               | -----                         |
-|       GET            |  /members                        | Read | [members]                              | get a list of members         |
-|       GET            |  /books                          | Read | [books]                                | get a list of the books       |
+|       GET            |  /members                        | Read | [array of members]                              | get a list of members         |
+|       GET            |  /books                          | Read | [array of books]                                | get a list of the books       |
 |   PUT/PATCH/POST     | /members/:memberId/books/:bookId |Update| associate the memberId w/ the bookId   | checkout a book. (You could also reverse the URL) |
 |                      |                                  |      |                                        | return a book                 |
 |       POST           |  /members                        |Create|  new memberId in library               | signing up for library card   |
