@@ -149,10 +149,29 @@ Your Task is to write a `RESTful` routing chart for the library system's API. Yo
 
 You can use this markdown chart:
 
-| HTTP METHOD (_Verb_) | URL (_Nouns_) | CRUD | Response | Notes |
-| -------------------- | ------------- | ---- | -------- | ----- |
-|                      |               |      |          |       |
-|                      |               |      |          |       |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                    | CRUD   | Response                                      | Notes |
+| -------------------- | -------------------------------- | ------ | --------------------------------------------- | ----- |
+| `members`            |                                  |        |                                               |       |
+| GET                  | /members                         | READ   | displays array of all members                 |       |
+| GET                  | /members/:memberId               | READ   | display as single member with memberId        |       |
+| POST                 | /members                         | CREATE | create new member                             |       |
+| PUT/PATCH            | /members/:memberId               | UPDATE | update member with memberId                   |       |
+| PUT/PATCH            | /members/:memberId/books/:bookId | UPDATE | link book with bookId to member with memberId |       |
+| DELETE               | /members/:memberId               | DELETE | delete member with memberId                   |       |
+| `books`              |                                  |        |                                               |       |
+| GET                  | /books                           | READ   | displays array of all books                   |       |
+| GET                  | /books/:booksId                  | READ   | display as single member with booksId         |       |
+| POST                 | /books                           | CREATE | create new book                               |       |
+| PUT/PATCH            | /books/:booksId                  | UPDATE | update member with booksId                    |       |
+| PUT/PATCH            | /books/:bookId/genres/:genreId   | UPDATE | link genre with genreId to book with bookId   |       |
+| DELETE               | /books/:booksId                  | DELETE | delete member with booksId                    |       |
+| `genres`             |                                  |        |                                               |       |
+| GET                  | /genres                          | READ   | displays array of all genres                  |       |
+| GET                  | /genres/:genreId                 | READ   | display as single genre with genreId          |       |
+| POST                 | /genres                          | CREATE | create new genre                              |       |
+| PUT/PATCH            | /genres/:genreId                 | UPDATE | update genre with genreId                     |       |
+| DELETE               | /genres/:genreId                 | DELETE | delete genre with genreId                     |       |
+|                      |                                  |        |                                               |       |
 
 #### Things to keep in mind
 
